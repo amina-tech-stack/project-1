@@ -37,6 +37,7 @@ export default function LoginForm() {
       }
 
       setMessage(data.message || "Connexion réussie !");
+      window.location.href = "/";
       setFormData({ email: "", password: "" });
     } catch (err) {
       if (err instanceof Error) {

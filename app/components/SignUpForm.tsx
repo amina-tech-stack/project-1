@@ -39,6 +39,7 @@ export default function SignUpForm() {
       }
 
       setMessage(data.message || "Inscription réussie !");
+      window.location.href = "/login";
       setFormData({ name: "", email: "", password: "" });
     } catch (err) {
       if (err instanceof Error) {
