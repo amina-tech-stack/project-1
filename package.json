@@ -15,10 +15,13 @@
   },
   "dependencies": {
     "@radix-ui/react-avatar": "^1.1.10",
+    "bcrypt": "^6.0.0",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "dotenv": "^17.2.1",
     "lucide-react": "^0.534.0",
+    "mongodb": "^6.18.0",
+    "mongoose": "^8.17.0",
     "next": "15.4.5",
     "next-auth": "^5.0.0-beta.29",
     "react": "19.1.0",
@@ -29,6 +32,8 @@
   "devDependencies": {
     "@eslint/eslintrc": "^3",
     "@tailwindcss/postcss": "^4",
+    "@types/bcrypt": "^6.0.0",
+    "@types/mongoose": "^5.11.96",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
