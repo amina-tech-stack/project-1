@@ -22,3 +22,28 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
     },
   },
 });
+interface RefreshTokenResponse {
+  accessToken?: string;
+  error?: string;
+}
+
+export async function refreshToken(): Promise<boolean> {
+  try {
+    const response = await fetch("/api/refresh-token/route", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        refreshToken: localStorage.getItem("refresh_token"),
+      }),
+    });
+    const data: RefreshTokenResponse = await response.json();
+    if (data.accessToken) {
+      localStorage.setItem("auth_token", data.accessToken);
+      return true;
+    }
+    return false;
+  } catch (error) {
+    console.error("Token refresh failed:", error);
+    return false;
+  }
+}

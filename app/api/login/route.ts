@@ -1,6 +1,8 @@
 import { NextRequest, NextResponse } from "next/server";
 import connectToDatabase from "../../../lib/mongodb";
 import User from "../../../models/User";
+import bcrypt from "bcrypt";
+import jwt from "jsonwebtoken";
 
 export async function POST(req: NextRequest) {
   try {
@@ -24,19 +26,29 @@ export async function POST(req: NextRequest) {
 
     console.log("Mot de passe stocké :", user.password);
     console.log("Mot de passe fourni :", password);
-    // Comparaison simple en texte brut
-    if (password !== user.password) {
+    console.log("Mot de passe fourni (trimmed) :", password.trim());
+    const isMatch = await bcrypt.compare(password.trim(), user.password);
+    console.log("Résultat de bcrypt.compare :", isMatch);
+    if (!isMatch) {
       return NextResponse.json(
         { error: "Mot de passe incorrect" },
         { status: 401 }
       );
     }
 
+    // Generate JWT token
+    const token = jwt.sign(
+      { id: user._id, email: user.email, name: user.name },
+      process.env.JWT_SECRET!,
+      { expiresIn: "1h" }
+    );
+
     const { password: _, ...userWithoutPassword } = user.toObject();
     return NextResponse.json(
       {
         message: "Connexion réussie",
         user: userWithoutPassword,
+        token,
       },
       { status: 200 }
     );
