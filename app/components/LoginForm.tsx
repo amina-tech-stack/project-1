@@ -12,12 +12,6 @@ interface FormData {
   password: string;
 }
 
-interface TokenValidationResponse {
-  valid: boolean;
-  user?: { id: string; name: string; email: string };
-  error?: string;
-}
-
 export default function LoginForm() {
   const [formData, setFormData] = useState<FormData>({
     email: "",
@@ -27,45 +21,15 @@ export default function LoginForm() {
   const [error, setError] = useState<string>("");
   const [showPassword, setShowPassword] = useState<boolean>(false);
   const [isLoading, setIsLoading] = useState<boolean>(false);
-  const [isTokenValid, setIsTokenValid] = useState<boolean>(false);
-  const [user, setUser] = useState<{
-    id: string;
-    name: string;
-    email: string;
-  } | null>(null);
   const router = useRouter();
   const { data: session, status } = useSession();
 
-  // Check token validity on component mount
+  // Redirect to dashboard if authenticated
   useEffect(() => {
-    const validateToken = async () => {
-      const token = localStorage.getItem("token");
-      if (token) {
-        try {
-          const res = await fetch("/api/validate-token", {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({ token }),
-          });
-          const data: TokenValidationResponse = await res.json();
-          if (data.valid && data.user) {
-            setIsTokenValid(true);
-            setUser(data.user);
-          } else {
-            setIsTokenValid(false);
-            localStorage.removeItem("token");
-            document.cookie = "token=; path=/; max-age=0; SameSite=Strict";
-          }
-        } catch (err) {
-          setIsTokenValid(false);
-          localStorage.removeItem("token");
-          document.cookie = "token=; path=/; max-age=0; SameSite=Strict";
-        }
-      }
-    };
-
-    validateToken();
-  }, []);
+    if (status === "authenticated") {
+      router.push("/dashboard");
+    }
+  }, [status, router]);
 
   // Handle form input changes
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -85,26 +49,18 @@ export default function LoginForm() {
     setIsLoading(true);
 
     try {
-      const res = await fetch("/api/login", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          email: formData.email.trim(),
-          password: formData.password.trim(),
-        }),
+      const res = await signIn("credentials", {
+        redirect: false,
+        email: formData.email.trim(),
+        password: formData.password.trim(),
       });
-      const data = await res.json();
 
-      if (!res.ok) {
-        throw new Error(data.error || "Erreur lors de la connexion");
+      if (res?.error) {
+        throw new Error(res.error);
       }
 
-      localStorage.setItem("token", data.token);
-      document.cookie = `token=${data.token}; path=/; max-age=3600; SameSite=Strict`;
       setMessage("Connexion réussie !");
       setFormData({ email: "", password: "" });
-      setIsTokenValid(true);
-      setUser(data.user || { id: "1", name: "User", email: formData.email });
       router.push("/dashboard");
     } catch (err) {
       setError(
@@ -130,15 +86,7 @@ export default function LoginForm() {
   const handleLogout = async () => {
     setIsLoading(true);
     try {
-      // Clear next-auth session if exists
-      if (status === "authenticated") {
-        await signOut({ redirect: false });
-      }
-      // Clear custom token
-      localStorage.removeItem("token");
-      document.cookie = "token=; path=/; max-age=0; SameSite=Strict";
-      setIsTokenValid(false);
-      setUser(null);
+      await signOut({ redirect: false });
       setMessage("Déconnexion réussie !");
       router.push("/login");
     } catch (err) {
@@ -148,43 +96,14 @@ export default function LoginForm() {
     }
   };
 
-  // If user is logged in (via next-auth or custom token)
-  if (status === "authenticated" || isTokenValid) {
+  // If user is authenticated, show loading state until redirect
+  if (status === "authenticated") {
     return (
       <div className="min-h-screen flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8 animate-gradient-bg">
         <div className="max-w-md w-full bg-white rounded-2xl shadow-2xl p-8 transform transition-all duration-500 hover:scale-105">
-          <div className="flex justify-center mb-6">
-            <Link href="/">
-              <Image
-                src="/logo.png"
-                alt="NexTech Innovations logo"
-                width={160}
-                height={40}
-                className="hover:opacity-90 transition-opacity duration-300"
-              />
-            </Link>
-          </div>
-          <h2 className="text-3xl font-extrabold text-center text-gray-800 mb-6 animate-fade-in-down">
-            Vous êtes connecté !
-          </h2>
-          <p className="text-center text-gray-600 mb-4">
-            Bienvenue, {session?.user?.name || user?.name || "Utilisateur"} !
+          <p className="text-center text-gray-600">
+            Redirection vers le tableau de bord...
           </p>
-          <div className="space-y-4">
-            <button
-              onClick={() => router.push("/dashboard")}
-              className="w-full py-3 px-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-lg hover:from-blue-700 hover:to-purple-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition-all duration-300"
-            >
-              Aller au tableau de bord
-            </button>
-            <button
-              onClick={handleLogout}
-              disabled={isLoading}
-              className="w-full py-3 px-4 bg-gradient-to-r from-red-600 to-red-800 text-white rounded-lg hover:from-red-700 hover:to-red-900 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
-            >
-              {isLoading ? "Déconnexion en cours..." : "Déconnexion"}
-            </button>
-          </div>
         </div>
       </div>
     );
