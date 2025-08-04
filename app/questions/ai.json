@@ -1,0 +1,77 @@
+[
+  {
+    "question": "What is the primary goal of machine learning?",
+    "options": ["Automate manual tasks", "Enable systems to learn from data", "Create databases", "Design user interfaces"],
+    "answer": "Enable systems to learn from data"
+  },
+  {
+    "question": "Which algorithm is used for supervised learning?",
+    "options": ["K-Means", "Linear Regression", "DBSCAN", "Apriori"],
+    "answer": "Linear Regression"
+  },
+  {
+    "question": "What is a neural network inspired by?",
+    "options": ["Human brain", "Database systems", "Web frameworks", "Operating systems"],
+    "answer": "Human brain"
+  },
+  {
+    "question": "What is overfitting in machine learning?",
+    "options": ["Model performs well on all data", "Model performs poorly on training data", "Model is too tailored to training data", "Model ignores training data"],
+    "answer": "Model is too tailored to training data"
+  },
+  {
+    "question": "Which Python library is commonly used for machine learning?",
+    "options": ["NumPy", "Pandas", "Scikit-learn", "Matplotlib"],
+    "answer": "Scikit-learn"
+  },
+  {
+    "question": "What is the purpose of a loss function in AI?",
+    "options": ["Measure model error", "Store data", "Render graphics", "Manage memory"],
+    "answer": "Measure model error"
+  },
+  {
+    "question": "Which type of learning uses unlabeled data?",
+    "options": ["Supervised", "Unsupervised", "Reinforcement", "Semi-supervised"],
+    "answer": "Unsupervised"
+  },
+  {
+    "question": "What is the role of activation functions in neural networks?",
+    "options": ["Introduce non-linearity", "Store data", "Manage memory", "Render output"],
+    "answer": "Introduce non-linearity"
+  },
+  {
+    "question": "Which AI field focuses on understanding human language?",
+    "options": ["Computer Vision", "Natural Language Processing", "Robotics", "Expert Systems"],
+    "answer": "Natural Language Processing"
+  },
+  {
+    "question": "What is a common use case for reinforcement learning?",
+    "options": ["Image classification", "Game playing", "Data storage", "Web design"],
+    "answer": "Game playing"
+  },
+  {
+    "question": "Which algorithm is used for clustering in AI?",
+    "options": ["K-Means", "Linear Regression", "Decision Tree", "SVM"],
+    "answer": "K-Means"
+  },
+  {
+    "question": "What is the purpose of gradient descent in machine learning?",
+    "options": ["Optimize model parameters", "Store data", "Render visuals", "Manage databases"],
+    "answer": "Optimize model parameters"
+  },
+  {
+    "question": "Which Python library is used for deep learning?",
+    "options": ["TensorFlow", "NumPy", "Pandas", "Flask"],
+    "answer": "TensorFlow"
+  },
+  {
+    "question": "What is a common metric for evaluating classification models?",
+    "options": ["Accuracy", "Mean Squared Error", "R-squared", "Loss"],
+    "answer": "Accuracy"
+  },
+  {
+    "question": "What is the purpose of data normalization in AI?",
+    "options": ["Improve model training", "Store data", "Render graphics", "Manage APIs"],
+    "answer": "Improve model training"
+  }
+]

@@ -1,0 +1,77 @@
+[
+  {
+    "question": "What is the purpose of a firewall in cybersecurity?",
+    "options": ["Monitor network traffic", "Store data", "Render websites", "Manage databases"],
+    "answer": "Monitor network traffic"
+  },
+  {
+    "question": "Which attack involves overwhelming a server with traffic?",
+    "options": ["Phishing", "DDoS", "SQL Injection", "Man-in-the-Middle"],
+    "answer": "DDoS"
+  },
+  {
+    "question": "What does CIA stand for in cybersecurity?",
+    "options": ["Confidentiality, Integrity, Availability", "Control, Inspect, Authenticate", "Create, Implement, Analyze", "Capture, Integrate, Access"],
+    "answer": "Confidentiality, Integrity, Availability"
+  },
+  {
+    "question": "Which encryption protocol is commonly used for secure web browsing?",
+    "options": ["SSL/TLS", "FTP", "HTTP", "SMTP"],
+    "answer": "SSL/TLS"
+  },
+  {
+    "question": "What is the purpose of penetration testing?",
+    "options": ["Develop software", "Identify vulnerabilities", "Manage databases", "Design networks"],
+    "answer": "Identify vulnerabilities"
+  },
+  {
+    "question": "Which type of malware disguises itself as legitimate software?",
+    "options": ["Virus", "Worm", "Trojan", "Ransomware"],
+    "answer": "Trojan"
+  },
+  {
+    "question": "What is a common method for authenticating users?",
+    "options": ["SQL Injection", "Two-Factor Authentication", "DDoS", "Phishing"],
+    "answer": "Two-Factor Authentication"
+  },
+  {
+    "question": "Which attack involves injecting malicious code into a database?",
+    "options": ["Phishing", "SQL Injection", "DDoS", "Brute Force"],
+    "answer": "SQL Injection"
+  },
+  {
+    "question": "What is the purpose of a VPN in cybersecurity?",
+    "options": ["Secure network connections", "Store data", "Render websites", "Manage APIs"],
+    "answer": "Secure network connections"
+  },
+  {
+    "question": "Which principle ensures only authorized users access data?",
+    "options": ["Availability", "Integrity", "Confidentiality", "Authenticity"],
+    "answer": "Confidentiality"
+  },
+  {
+    "question": "What is the goal of ethical hacking?",
+    "options": ["Exploit systems", "Improve security", "Steal data", "Design software"],
+    "answer": "Improve security"
+  },
+  {
+    "question": "Which tool is used for network packet analysis?",
+    "options": ["Wireshark", "Metasploit", "Nmap", "Burp Suite"],
+    "answer": "Wireshark"
+  },
+  {
+    "question": "What is a common defense against phishing attacks?",
+    "options": ["User training", "SQL Injection", "DDoS", "Brute Force"],
+    "answer": "User training"
+  },
+  {
+    "question": "Which protocol is used for secure file transfer?",
+    "options": ["FTP", "SFTP", "HTTP", "SMTP"],
+    "answer": "SFTP"
+  },
+  {
+    "question": "What is the purpose of intrusion detection systems?",
+    "options": ["Store data", "Monitor for suspicious activity", "Render websites", "Manage APIs"],
+    "answer": "Monitor for suspicious activity"
+  }
+]

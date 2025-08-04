@@ -1,0 +1,92 @@
+[
+  {
+    "courseSlug": "front-end-development",
+    "lectureTitle": "What is Front-End Development?",
+    "content": "Front-end development focuses on creating the user interface and experience of a website or web application. This lecture introduces the role of a front-end developer, covering the core technologies: HTML for structure, CSS for styling, and JavaScript for interactivity. You'll explore how front-end development integrates with back-end systems to deliver seamless web experiences. Learn about the evolution of web development, modern frameworks like React, and the importance of responsive design to ensure accessibility across devices."
+  },
+  {
+    "courseSlug": "front-end-development",
+    "lectureTitle": "Setting Up Your Development Environment",
+    "content": "This lecture guides you through setting up a robust development environment for front-end development. You'll install essential tools like Visual Studio Code, Node.js, and npm, and configure browser developer tools for debugging. Learn best practices for organizing your workspace, managing dependencies, and using Git for version control. The session includes tips for optimizing your setup to streamline coding and testing workflows."
+  },
+  {
+    "courseSlug": "front-end-development",
+    "lectureTitle": "Understanding the Web Development Workflow",
+    "content": "Explore the web development workflow, from planning to deployment. This lecture covers wireframing, prototyping, and designing user interfaces, followed by coding, testing, and launching a website. Understand the roles of designers, developers, and stakeholders in the process. Learn about agile methodologies, collaboration tools like Figma, and how to iterate based on user feedback to create user-centric web applications."
+  },
+  {
+    "courseSlug": "front-end-development",
+    "lectureTitle": "HTML Basics: Structure and Semantics",
+    "content": "HTML is the backbone of web development. This lecture dives into HTML5, focusing on creating structured and semantic markup. Learn about essential tags (e.g., `<div>`, `<section>`, `<article>`), semantic elements for accessibility, and best practices for organizing content. You'll practice building a simple webpage structure and understand how semantic HTML improves SEO and screen reader compatibility."
+  },
+  {
+    "courseSlug": "front-end-development",
+    "lectureTitle": "CSS Styling: Layouts and Flexbox",
+    "content": "CSS brings websites to life with styling and layouts. This lecture covers CSS fundamentals, including selectors, properties, and the box model. You'll explore Flexbox, a powerful layout system for creating responsive and flexible designs. Learn to align, distribute, and order elements efficiently, and apply these skills to style a webpage with modern, user-friendly layouts."
+  },
+  {
+    "courseSlug": "front-end-development",
+    "lectureTitle": "Responsive Design with Media Queries",
+    "content": "Responsive design ensures websites adapt to various screen sizes. This lecture introduces CSS media queries to create mobile-first designs. Learn to use breakpoints, relative units (e.g., vw, rem), and responsive images to optimize user experience across devices. You'll practice building a responsive navigation bar and understand the principles of adaptive design for accessibility and performance."
+  },
+  {
+    "courseSlug": "front-end-development",
+    "lectureTitle": "Project: Build a Responsive Landing Page",
+    "content": "Apply your HTML and CSS skills to build a responsive landing page. This project involves creating a visually appealing page with a header, hero section, and call-to-action buttons, optimized for desktop and mobile devices. You'll use semantic HTML, Flexbox, and media queries to ensure responsiveness. The lecture includes guidance on structuring your project, testing cross-browser compatibility, and incorporating accessibility features."
+  },
+  {
+    "courseSlug": "front-end-development",
+    "lectureTitle": "JavaScript Basics: Variables and Functions",
+    "content": "JavaScript adds interactivity to websites. This lecture covers the basics: variables (let, const, var), data types, and functions. Learn to manipulate data, create reusable code with functions, and understand scope and hoisting. You'll write simple scripts to perform calculations and interact with users, laying the foundation for dynamic web development."
+  },
+  {
+    "courseSlug": "front-end-development",
+    "lectureTitle": "DOM Manipulation and Events",
+    "content": "The Document Object Model (DOM) enables JavaScript to interact with HTML elements. This lecture explores DOM manipulation, including selecting elements, modifying content, and handling events like clicks and inputs. Learn to create interactive features, such as toggling visibility or updating text dynamically, and understand event delegation for efficient event handling."
+  },
+  {
+    "courseSlug": "front-end-development",
+    "lectureTitle": "Asynchronous JavaScript: Promises and Async/Await",
+    "content": "Asynchronous JavaScript enables non-blocking operations, crucial for fetching data or handling user interactions. This lecture covers Promises and async/await syntax for managing asynchronous tasks. You'll learn to handle API calls, manage errors, and chain asynchronous operations, applying these concepts to fetch and display data from a mock API."
+  },
+  {
+    "courseSlug": "front-end-development",
+    "lectureTitle": "Project: Interactive To-Do List",
+    "content": "Build an interactive to-do list application using JavaScript. This project involves creating a user interface to add, remove, and mark tasks as complete. You'll use DOM manipulation for dynamic updates, event listeners for user interactions, and local storage to persist data. The lecture guides you through structuring the app, handling user input, and ensuring a smooth user experience."
+  },
+  {
+    "courseSlug": "front-end-development",
+    "lectureTitle": "Introduction to React and JSX",
+    "content": "React is a popular JavaScript library for building dynamic user interfaces. This lecture introduces React and JSX, explaining components, virtual DOM, and declarative programming. You'll set up a React project, create your first component, and use JSX to render UI elements, laying the groundwork for building single-page applications."
+  },
+  {
+    "courseSlug": "front-end-development",
+    "lectureTitle": "Components, Props, and State",
+    "content": "Learn the core concepts of React: components, props, and state. This lecture covers creating reusable components, passing data with props, and managing dynamic data with state. You'll build a simple counter app to understand state updates and practice passing props to child components for modular UI design."
+  },
+  {
+    "courseSlug": "front-end-development",
+    "lectureTitle": "React Hooks and Routing",
+    "content": "React Hooks simplify state and lifecycle management in functional components. This lecture covers useState and useEffect hooks, alongside React Router for navigation. Learn to manage component state, handle side effects, and create multi-page applications with client-side routing. You'll build a small app with multiple routes to practice these concepts."
+  },
+  {
+    "courseSlug": "front-end-development",
+    "lectureTitle": "Project: Build a React Dashboard",
+    "content": "Create a fully functional React dashboard displaying user data or analytics. This project involves building reusable components, managing state with hooks, and implementing routing for navigation. You'll fetch data from an API, use CSS for styling, and ensure responsiveness. The lecture provides step-by-step guidance on structuring, testing, and deploying your dashboard."
+  },
+  {
+    "courseSlug": "front-end-development",
+    "lectureTitle": "Planning Your Web Application",
+    "content": "Effective planning is key to successful web development. This lecture covers gathering requirements, creating wireframes, and defining user stories. Learn to use tools like Figma for prototyping and plan a capstone project that integrates HTML, CSS, JavaScript, and React. You'll outline a project scope and timeline to prepare for development."
+  },
+  {
+    "courseSlug": "front-end-development",
+    "lectureTitle": "Building and Deploying Your Project",
+    "content": "This capstone project guides you through building and deploying a complete web application. You'll combine HTML, CSS, JavaScript, and React to create a portfolio-ready app, such as an e-commerce site or personal blog. Learn to deploy your app using platforms like Vercel or Netlify, optimize performance, and ensure accessibility."
+  },
+  {
+    "courseSlug": "front-end-development",
+    "lectureTitle": "Project Review and Optimization",
+    "content": "Review and refine your capstone project to meet industry standards. This lecture covers testing for functionality, accessibility, and performance using tools like Lighthouse. Learn to optimize images, reduce bundle size, and improve load times. You'll receive feedback on your project and prepare it for inclusion in your portfolio."
+  }
+]

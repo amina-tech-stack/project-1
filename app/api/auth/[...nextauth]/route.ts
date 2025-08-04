@@ -1,5 +1,6 @@
 import { handlers } from "@/auth"; // Referring to the auth.ts we just created
 export const { GET, POST } = handlers;
+
 import NextAuth, { NextAuthConfig, Session } from "next-auth";
 import CredentialsProvider from "next-auth/providers/credentials";
 import { JWT } from "next-auth/jwt";

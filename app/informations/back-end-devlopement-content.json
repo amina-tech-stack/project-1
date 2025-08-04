@@ -1,0 +1,92 @@
+[
+  {
+    "courseSlug": "back-end-development",
+    "lectureTitle": "What is Back-End Development?",
+    "content": "Back-end development focuses on the server-side of web applications, handling logic, data, and APIs. This lecture introduces the role of back-end developers, covering servers, databases, and application logic. Learn about key technologies like Node.js, Express, and MongoDB, and how they interact with the front-end to deliver dynamic content. Understand the importance of scalability and security in back-end systems."
+  },
+  {
+    "courseSlug": "back-end-development",
+    "lectureTitle": "Setting Up Node.js and Express",
+    "content": "Set up your back-end development environment with Node.js and Express. This lecture guides you through installing Node.js, initializing a project, and setting up an Express server. Learn to create basic routes, handle HTTP requests, and test your server using tools like Postman. You'll build a simple 'Hello World' API to understand the setup process."
+  },
+  {
+    "courseSlug": "back-end-development",
+    "lectureTitle": "Understanding Servers and APIs",
+    "content": "Explore the fundamentals of servers and APIs in back-end development. This lecture covers server architecture, HTTP methods (GET, POST, etc.), and RESTful API principles. Learn how servers process requests, communicate with clients, and handle data. You'll practice creating a basic API endpoint and understand the role of APIs in modern web applications."
+  },
+  {
+    "courseSlug": "back-end-development",
+    "lectureTitle": "Node.js Fundamentals",
+    "content": "Node.js enables server-side JavaScript development. This lecture covers Node.js basics, including modules, event-driven architecture, and asynchronous programming. Learn to use the Node.js runtime, manage packages with npm, and write basic server-side scripts. You'll create a simple file-processing script to practice Node.js concepts."
+  },
+  {
+    "courseSlug": "back-end-development",
+    "lectureTitle": "Building APIs with Express",
+    "content": "Express is a lightweight framework for building APIs. This lecture teaches you to create RESTful APIs with Express, covering routes, request handling, and response formatting. Learn to structure your API, handle query parameters, and return JSON data. You'll build a basic CRUD API for a resource like 'products' to practice these skills."
+  },
+  {
+    "courseSlug": "back-end-development",
+    "lectureTitle": "Middleware and Routing",
+    "content": "Middleware and routing are core to Express applications. This lecture explores middleware for request processing, logging, and error handling, and advanced routing techniques. Learn to create modular routes, validate inputs, and handle CORS. You'll implement middleware to log requests and protect routes in a sample API."
+  },
+  {
+    "courseSlug": "back-end-development",
+    "lectureTitle": "Project: Simple API Server",
+    "content": "Build a simple API server using Node.js and Express. This project involves creating endpoints for a resource (e.g., books), handling CRUD operations, and testing with Postman. You'll structure your project with separate routes and middleware, ensuring clean code and error handling. The lecture guides you through deployment considerations and testing."
+  },
+  {
+    "courseSlug": "back-end-development",
+    "lectureTitle": "Introduction to MongoDB",
+    "content": "MongoDB is a NoSQL database for modern applications. This lecture introduces MongoDB, covering its document-based structure, collections, and basic operations. Learn to set up MongoDB locally or with MongoDB Atlas, perform queries, and understand schema design. You'll practice creating and querying a simple collection."
+  },
+  {
+    "courseSlug": "back-end-development",
+    "lectureTitle": "CRUD Operations with Mongoose",
+    "content": "Mongoose simplifies MongoDB interactions in Node.js. This lecture covers Mongoose schemas, models, and CRUD operations (Create, Read, Update, Delete). Learn to define schemas, perform validations, and execute database queries. You'll build a Mongoose-based API endpoint to manage user data, integrating with Express."
+  },
+  {
+    "courseSlug": "back-end-development",
+    "lectureTitle": "Database Design and Relationships",
+    "content": "Effective database design is crucial for scalable applications. This lecture explores MongoDB schema design, relationships (embedded vs. referenced), and indexing for performance. Learn to model one-to-many and many-to-many relationships and optimize queries. You'll design a database schema for a blog application."
+  },
+  {
+    "courseSlug": "back-end-development",
+    "lectureTitle": "Project: Blog API with MongoDB",
+    "content": "Create a blog API using Node.js, Express, and MongoDB. This project involves building endpoints for posts, comments, and users, with full CRUD functionality. You'll use Mongoose for data modeling, implement validation, and test with Postman. The lecture covers structuring the API, handling errors, and preparing for deployment."
+  },
+  {
+    "courseSlug": "back-end-development",
+    "lectureTitle": "JWT and User Authentication",
+    "content": "JSON Web Tokens (JWT) are used for secure authentication. This lecture covers JWT structure, token generation, and verification. Learn to implement user login and registration with Express and MongoDB, securing endpoints with JWT middleware. You'll create a login system to practice authentication flows."
+  },
+  {
+    "courseSlug": "back-end-development",
+    "lectureTitle": "Role-Based Authorization",
+    "content": "Authorization controls access to resources based on user roles. This lecture explores role-based access control (RBAC) in Express applications. Learn to assign roles (e.g., admin, user), protect routes, and validate permissions. You'll implement RBAC in a sample API, ensuring only authorized users access specific endpoints."
+  },
+  {
+    "courseSlug": "back-end-development",
+    "lectureTitle": "Securing APIs",
+    "content": "API security is critical for protecting data. This lecture covers common security practices: input validation, rate limiting, and preventing SQL injection in MongoDB. Learn to use libraries like express-validator and helmet to secure your API. You'll apply these techniques to secure a sample API endpoint."
+  },
+  {
+    "courseSlug": "back-end-development",
+    "lectureTitle": "Project: Secure User System",
+    "content": "Build a secure user management system with authentication and authorization. This project involves creating endpoints for user registration, login, and profile management, using JWT and RBAC. You'll integrate MongoDB with Mongoose, secure routes, and test with Postman. The lecture guides you through deployment and security testing."
+  },
+  {
+    "courseSlug": "back-end-development",
+    "lectureTitle": "Planning Your Back-End Application",
+    "content": "Planning ensures a successful back-end project. This lecture covers defining API requirements, designing endpoints, and modeling data. Learn to use tools like Swagger for API documentation and plan a capstone project, such as an e-commerce API. You'll create a project blueprint with clear objectives."
+  },
+  {
+    "courseSlug": "back-end-development",
+    "lectureTitle": "Building and Deploying Your API",
+    "content": "This capstone project guides you through building and deploying a complete back-end API. You'll create a RESTful API with Node.js, Express, and MongoDB, implementing CRUD operations and authentication. Learn to deploy to platforms like Heroku or AWS, optimize performance, and ensure scalability."
+  },
+  {
+    "courseSlug": "back-end-development",
+    "lectureTitle": "Project Review and Scaling",
+    "content": "Review your capstone API for functionality and performance. This lecture covers testing with tools like Jest, optimizing database queries, and scaling your application. Learn about load balancing, caching, and monitoring. You'll refine your API, address feedback, and prepare it for production use."
+  }
+]

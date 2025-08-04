@@ -1,0 +1,77 @@
+[
+  {
+    "question": "What is the role of Node.js in back-end development?",
+    "options": ["Database management", "Server-side JavaScript runtime", "Front-end framework", "CSS preprocessor"],
+    "answer": "Server-side JavaScript runtime"
+  },
+  {
+    "question": "Which HTTP method is used to retrieve data from a server?",
+    "options": ["POST", "GET", "PUT", "DELETE"],
+    "answer": "GET"
+  },
+  {
+    "question": "What is a REST API?",
+    "options": ["A database system", "A stateless communication architecture", "A front-end framework", "A programming language"],
+    "answer": "A stateless communication architecture"
+  },
+  {
+    "question": "Which database is classified as NoSQL?",
+    "options": ["MySQL", "PostgreSQL", "MongoDB", "SQLite"],
+    "answer": "MongoDB"
+  },
+  {
+    "question": "What does ORM stand for in back-end development?",
+    "options": ["Object-Relational Mapping", "Operational Resource Management", "Object-Request Model", "Ordered Relational Mapping"],
+    "answer": "Object-Relational Mapping"
+  },
+  {
+    "question": "What is the purpose of middleware in Express.js?",
+    "options": ["Handle database queries", "Process requests and responses", "Render HTML", "Manage CSS"],
+    "answer": "Process requests and responses"
+  },
+  {
+    "question": "Which protocol is commonly used for secure API communication?",
+    "options": ["HTTP", "FTP", "HTTPS", "SMTP"],
+    "answer": "HTTPS"
+  },
+  {
+    "question": "What is a primary key in a relational database?",
+    "options": ["A duplicate key", "A unique identifier for a record", "A foreign key", "A temporary key"],
+    "answer": "A unique identifier for a record"
+  },
+  {
+    "question": "What does CRUD stand for in database operations?",
+    "options": ["Create, Read, Update, Delete", "Compute, Retrieve, Upgrade, Drop", "Connect, Read, Use, Deploy", "Create, Remove, Update, Design"],
+    "answer": "Create, Read, Update, Delete"
+  },
+  {
+    "question": "Which Node.js module is used for file system operations?",
+    "options": ["http", "fs", "path", "url"],
+    "answer": "fs"
+  },
+  {
+    "question": "What is the purpose of a JWT in authentication?",
+    "options": ["Encrypting data", "Storing session data", "Verifying user identity", "Managing databases"],
+    "answer": "Verifying user identity"
+  },
+  {
+    "question": "Which database query language is used for relational databases?",
+    "options": ["SQL", "NoSQL", "MongoQL", "GraphQL"],
+    "answer": "SQL"
+  },
+  {
+    "question": "What is the role of a load balancer in back-end systems?",
+    "options": ["Database management", "Distribute network traffic", "Render HTML", "Handle authentication"],
+    "answer": "Distribute network traffic"
+  },
+  {
+    "question": "Which Express.js method is used to handle POST requests?",
+    "options": ["app.get()", "app.post()", "app.put()", "app.delete()"],
+    "answer": "app.post()"
+  },
+  {
+    "question": "What is the purpose of environment variables in back-end development?",
+    "options": ["Store user data", "Configure sensitive settings", "Render templates", "Manage CSS"],
+    "answer": "Configure sensitive settings"
+  }
+]

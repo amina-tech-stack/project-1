@@ -1,0 +1,87 @@
+[
+  {
+    "courseSlug": "artificial-intelligence",
+    "lectureTitle": "What is AI and Machine Learning?",
+    "content": "Artificial Intelligence (AI) refers to the development of computer systems that can perform tasks requiring human intelligence, such as learning, problem-solving, and decision-making. Machine Learning (ML), a subset of AI, involves algorithms that enable computers to learn from data without explicit programming. This lecture covers the history of AI, key ML algorithms (e.g., regression, neural networks), and real-world applications like image recognition and natural language processing."
+  },
+  {
+    "courseSlug": "artificial-intelligence",
+    "lectureTitle": "Setting Up Python and TensorFlow",
+    "content": "TensorFlow is a powerful framework for building AI models. This lecture guides you through setting up Python and TensorFlow, including installing dependencies and configuring a virtual environment. Learn to use Jupyter Notebooks for experimentation and verify your setup with a simple ML model. You'll also explore TensorFlow's ecosystem and tools for debugging AI applications."
+  },
+  {
+    "courseSlug": "artificial-intelligence",
+    "lectureTitle": "AI Applications in the Real World",
+    "content": "AI powers innovations across industries. This lecture explores real-world AI applications, such as recommendation systems (e.g., Netflix), autonomous vehicles, and healthcare diagnostics. Learn how AI algorithms process data to deliver insights and solve problems. You'll analyze case studies and discuss the impact of AI on society and future trends."
+  },
+  {
+    "courseSlug": "artificial-intelligence",
+    "lectureTitle": "Supervised vs. Unsupervised Learning",
+    "content": "Machine learning is divided into supervised and unsupervised learning. This lecture explains supervised learning (using labeled data for predictions) and unsupervised learning (finding patterns in unlabeled data). Learn about algorithms like linear regression and k-means clustering, and their applications. You'll implement a simple algorithm to understand these concepts."
+  },
+  {
+    "courseSlug": "artificial-intelligence",
+    "lectureTitle": "Regression and Classification",
+    "content": "Regression and classification are core ML tasks. This lecture covers regression (predicting numerical values, e.g., house prices) and classification (predicting categories, e.g., spam detection). Learn about algorithms like logistic regression and decision trees, and evaluate model performance using metrics like accuracy and RMSE. You'll practice with a sample dataset."
+  },
+  {
+    "courseSlug": "artificial-intelligence",
+    "lectureTitle": "Data Preprocessing and Feature Engineering",
+    "content": "Data quality is critical for ML success. This lecture covers data preprocessing techniques like cleaning, normalization, and handling missing values. Learn feature engineering to create meaningful inputs for models, including feature selection and transformation. You'll preprocess a dataset using Python and pandas to prepare it for training."
+  },
+  {
+    "courseSlug": "artificial-intelligence",
+    "lectureTitle": "Project: Predict House Prices",
+    "content": "Apply ML to predict house prices using regression. This project involves loading a dataset, preprocessing data, and training a linear regression model with TensorFlow. You'll evaluate model performance, tune hyperparameters, and visualize predictions. The lecture guides you through data exploration, model building, and interpreting results for real-world applications."
+  },
+  {
+    "courseSlug": "artificial-intelligence",
+    "lectureTitle": "Introduction to Neural Networks",
+    "content": "Neural networks are the backbone of deep learning. This lecture introduces neural network architecture, including neurons, layers, and activation functions. Learn how neural networks process data and train using backpropagation. You'll build a simple neural network with TensorFlow to classify data, understanding key concepts like weights and biases."
+  },
+  {
+    "courseSlug": "artificial-intelligence",
+    "lectureTitle": "Building Models with TensorFlow",
+    "content": "TensorFlow simplifies neural network development. This lecture covers building and training models with TensorFlow’s Keras API, including defining layers, compiling models, and optimizing with loss functions. Learn to handle overfitting with regularization and dropout. You'll create a neural network for a classification task and evaluate its performance."
+  },
+  {
+    "courseSlug": "artificial-intelligence",
+    "lectureTitle": "Convolutional Neural Networks (CNNs)",
+    "content": "Convolutional Neural Networks (CNNs) excel at image processing. This lecture explains CNN architecture, including convolutional layers, pooling, and fully connected layers. Learn to use CNNs for tasks like image classification. You'll build a CNN with TensorFlow to recognize objects in images, understanding how convolutions extract features."
+  },
+  {
+    "courseSlug": "artificial-intelligence",
+    "lectureTitle": "Project: Image Classification",
+    "content": "Build an image classification model using a CNN. This project involves loading a dataset (e.g., CIFAR-10), preprocessing images, and training a CNN with TensorFlow. You'll tune hyperparameters, evaluate accuracy, and visualize results. The lecture provides guidance on handling image data, optimizing model performance, and deploying the model."
+  },
+  {
+    "courseSlug": "artificial-intelligence",
+    "lectureTitle": "Bias and Fairness in AI",
+    "content": "AI systems can inadvertently perpetuate bias. This lecture explores ethical considerations in AI, including bias in datasets, fairness in model predictions, and societal impacts. Learn techniques to identify and mitigate bias, such as fairness metrics and diverse data collection. You'll analyze a case study on biased AI systems."
+  },
+  {
+    "courseSlug": "artificial-intelligence",
+    "lectureTitle": "Deploying AI Models",
+    "content": "Deploying AI models makes them accessible to users. This lecture covers deployment strategies, including using TensorFlow Serving, Flask, or cloud platforms like AWS. Learn to package models, handle scalability, and monitor performance. You'll deploy a simple ML model to a cloud service and test its predictions."
+  },
+  {
+    "courseSlug": "artificial-intelligence",
+    "lectureTitle": "Monitoring and Maintaining AI Systems",
+    "content": "Maintaining AI systems ensures long-term reliability. This lecture covers monitoring model performance, detecting data drift, and retraining models. Learn about tools for logging predictions and evaluating metrics in production. You'll set up a monitoring pipeline for a deployed ML model to ensure it remains accurate."
+  },
+  {
+    "courseSlug": "artificial-intelligence",
+    "lectureTitle": "Planning Your AI Application",
+    "content": "Planning an AI project requires clear objectives and data strategies. This lecture covers defining use cases, selecting appropriate datasets, and choosing ML algorithms. Learn to use tools like Jupyter for prototyping and plan a capstone AI project. You'll create a project proposal for a real-world AI application."
+  },
+  {
+    "courseSlug": "artificial-intelligence",
+    "lectureTitle": "Building and Testing Your Model",
+    "content": "This capstone project guides you through building and testing an AI model for a real-world problem, such as sentiment analysis or object detection. You'll preprocess data, train a model with TensorFlow, and evaluate performance. The lecture covers debugging, hyperparameter tuning, and preparing your model for deployment."
+  },
+  {
+    "courseSlug": "artificial-intelligence",
+    "lectureTitle": "Project Review and Presentation",
+    "content": "Review and present your capstone AI project. This lecture focuses on evaluating model performance, addressing feedback, and creating a compelling presentation. Learn to use visualization tools like Matplotlib to showcase results and document your project for a portfolio. You'll refine your model and prepare a professional presentation."
+  }
+]

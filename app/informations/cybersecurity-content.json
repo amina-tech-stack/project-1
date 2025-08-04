@@ -1,0 +1,87 @@
+[
+  {
+    "courseSlug": "cybersecurity",
+    "lectureTitle": "What is Cybersecurity?",
+    "content": "Cybersecurity protects systems, networks, and data from digital threats. This lecture introduces cybersecurity principles, including confidentiality, integrity, and availability (CIA triad). Learn about common threats like malware, phishing, and DDoS attacks, and the role of cybersecurity professionals. Explore career paths and the importance of proactive security measures."
+  },
+  {
+    "courseSlug": "cybersecurity",
+    "lectureTitle": "Common Threats and Vulnerabilities",
+    "content": "Understanding threats and vulnerabilities is key to cybersecurity. This lecture covers common attack vectors, such as SQL injection, cross-site scripting (XSS), and social engineering. Learn to identify vulnerabilities in software and networks using tools like Nmap. You'll analyze real-world attack examples and discuss mitigation strategies."
+  },
+  {
+    "courseSlug": "cybersecurity",
+    "lectureTitle": "Setting Up a Secure Environment",
+    "content": "A secure environment is essential for cybersecurity practice. This lecture guides you through setting up a virtual lab with tools like Kali Linux and VirtualBox. Learn to configure firewalls, secure networks, and isolate testing environments. You'll create a lab to safely practice security techniques without risking real systems."
+  },
+  {
+    "courseSlug": "cybersecurity",
+    "lectureTitle": "Introduction to Ethical Hacking",
+    "content": "Ethical hacking involves testing systems to improve security. This lecture introduces ethical hacking principles, legal considerations, and methodologies like the Cyber Kill Chain. Learn the difference between white-hat, black-hat, and gray-hat hacking. You'll explore tools like Metasploit and prepare for penetration testing."
+  },
+  {
+    "courseSlug": "cybersecurity",
+    "lectureTitle": "Reconnaissance and Footprinting",
+    "content": "Reconnaissance gathers information about a target system. This lecture covers passive and active footprinting techniques, such as WHOIS lookups, DNS enumeration, and social engineering. Learn to use tools like Maltego to collect data ethically. You'll practice gathering information about a mock target system."
+  },
+  {
+    "courseSlug": "cybersecurity",
+    "lectureTitle": "Scanning and Enumeration",
+    "content": "Scanning and enumeration identify system vulnerabilities. This lecture teaches network scanning with Nmap and enumeration techniques to discover services, users, and open ports. Learn to interpret scan results and prioritize vulnerabilities. You'll perform a network scan in a lab environment to practice these skills."
+  },
+  {
+    "courseSlug": "cybersecurity",
+    "lectureTitle": "Project: Conduct a Security Audit",
+    "content": "Conduct a security audit on a mock system. This project involves reconnaissance, scanning, and enumeration to identify vulnerabilities. You'll use tools like Nmap and Nessus, document findings, and propose mitigation strategies. The lecture guides you through structuring the audit, reporting results, and ensuring ethical practices."
+  },
+  {
+    "courseSlug": "cybersecurity",
+    "lectureTitle": "Penetration Testing Methodologies",
+    "content": "Penetration testing simulates real-world attacks to test security. This lecture covers methodologies like OWASP and PTES, including planning, exploitation, and reporting phases. Learn to use tools like Burp Suite and Metasploit. You'll follow a structured approach to plan a penetration test for a web application."
+  },
+  {
+    "courseSlug": "cybersecurity",
+    "lectureTitle": "Exploiting Vulnerabilities",
+    "content": "Exploiting vulnerabilities tests system weaknesses. This lecture teaches safe exploitation techniques using tools like Metasploit to gain access to systems. Learn about privilege escalation, payload delivery, and post-exploitation. You'll practice exploiting a known vulnerability in a controlled lab environment."
+  },
+  {
+    "courseSlug": "cybersecurity",
+    "lectureTitle": "Reporting and Mitigation",
+    "content": "Effective reporting communicates findings to stakeholders. This lecture covers creating penetration test reports, prioritizing vulnerabilities, and recommending mitigation strategies. Learn to use templates and tools for professional reporting. You'll draft a report for a simulated penetration test, focusing on clarity and actionable recommendations."
+  },
+  {
+    "courseSlug": "cybersecurity",
+    "lectureTitle": "Project: Penetration Test Simulation",
+    "content": "Simulate a penetration test on a mock system. This project involves planning, scanning, exploiting vulnerabilities, and reporting findings. You'll use tools like Metasploit and Burp Suite in a lab environment, following ethical hacking guidelines. The lecture provides guidance on executing the test and documenting results for a portfolio."
+  },
+  {
+    "courseSlug": "cybersecurity",
+    "lectureTitle": "Understanding Encryption and Cryptography",
+    "content": "Encryption protects data confidentiality. This lecture covers cryptographic principles, symmetric and asymmetric encryption, and algorithms like AES and RSA. Learn how encryption secures communications and data storage. You'll implement a simple encryption scheme and explore real-world applications like HTTPS."
+  },
+  {
+    "courseSlug": "cybersecurity",
+    "lectureTitle": "Implementing Secure Protocols",
+    "content": "Secure protocols ensure safe data transmission. This lecture covers protocols like SSL/TLS, SSH, and IPsec, explaining their roles in cybersecurity. Learn to configure secure connections and verify protocol implementation. You'll set up an SSH server and test its security in a lab environment."
+  },
+  {
+    "courseSlug": "cybersecurity",
+    "lectureTitle": "Securing Web Applications",
+    "content": "Web applications are common attack targets. This lecture covers securing web apps against threats like XSS, SQL injection, and CSRF. Learn to use tools like OWASP ZAP and implement security headers. You'll audit a sample web app and apply mitigation techniques to protect it."
+  },
+  {
+    "courseSlug": "cybersecurity",
+    "lectureTitle": "Planning a Secure System",
+    "content": "Planning a secure system prevents vulnerabilities. This lecture covers security-by-design principles, risk assessment, and threat modeling. Learn to use frameworks like STRIDE to identify risks. You'll create a security plan for a capstone project, outlining measures to protect a system."
+  },
+  {
+    "courseSlug": "cybersecurity",
+    "lectureTitle": "Implementing Security Measures",
+    "content": "This capstone project involves building and securing a system, such as a web application or network. You'll implement firewalls, encryption, and secure protocols, and test for vulnerabilities. The lecture guides you through configuring security tools, monitoring threats, and ensuring compliance with best practices."
+  },
+  {
+    "courseSlug": "cybersecurity",
+    "lectureTitle": "Project Review and Security Audit",
+    "content": "Review your capstone project for security and functionality. This lecture covers conducting a security audit, testing with tools like Nessus, and addressing findings. Learn to document your project for a portfolio and present your security measures. You'll refine your system based on feedback and best practices."
+  }
+]

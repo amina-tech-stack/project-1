@@ -1,0 +1,77 @@
+[
+  {
+    "question": "What is the purpose of the 'alt' attribute in HTML images?",
+    "options": ["Styling images", "Image source", "Accessibility description", "Image size"],
+    "answer": "Accessibility description"
+  },
+  {
+    "question": "Which CSS property controls element spacing inside its borders?",
+    "options": ["Margin", "Padding", "Border", "Spacing"],
+    "answer": "Padding"
+  },
+  {
+    "question": "What does DOM stand for in JavaScript?",
+    "options": ["Document Object Model", "Data Object Method", "Dynamic Output Model", "Document Order Module"],
+    "answer": "Document Object Model"
+  },
+  {
+    "question": "Which HTML tag is used for creating a hyperlink?",
+    "options": ["<link>", "<a>", "<href>", "<url>"],
+    "answer": "<a>"
+  },
+  {
+    "question": "What is the purpose of Flexbox in CSS?",
+    "options": ["Animation", "Layout alignment", "Color management", "Font styling"],
+    "answer": "Layout alignment"
+  },
+  {
+    "question": "Which JavaScript method adds an element to the end of an array?",
+    "options": ["push()", "pop()", "shift()", "unshift()"],
+    "answer": "push()"
+  },
+  {
+    "question": "What is the role of the 'useState' hook in React?",
+    "options": ["Manage state", "Handle routing", "Fetch data", "Style components"],
+    "answer": "Manage state"
+  },
+  {
+    "question": "Which CSS unit is relative to the font size of the root element?",
+    "options": ["px", "em", "rem", "vw"],
+    "answer": "rem"
+  },
+  {
+    "question": "What does the 'async' keyword do in JavaScript?",
+    "options": ["Runs code synchronously", "Declares a function as asynchronous", "Imports modules", "Handles errors"],
+    "answer": "Declares a function as asynchronous"
+  },
+  {
+    "question": "Which HTML5 element is used for semantic navigation?",
+    "options": ["<header>", "<nav>", "<section>", "<footer>"],
+    "answer": "<nav>"
+  },
+  {
+    "question": "What is the purpose of media queries in CSS?",
+    "options": ["Animation", "Responsive design", "Font styling", "Event handling"],
+    "answer": "Responsive design"
+  },
+  {
+    "question": "Which JavaScript framework is known for its virtual DOM?",
+    "options": ["Angular", "React", "Vue", "Svelte"],
+    "answer": "React"
+  },
+  {
+    "question": "What is the default display value for a <div> element?",
+    "options": ["inline", "block", "flex", "grid"],
+    "answer": "block"
+  },
+  {
+    "question": "Which method is used to select an element by ID in JavaScript?",
+    "options": ["getElementById()", "querySelector()", "getElementsByClassName()", "selectID()"],
+    "answer": "getElementById()"
+  },
+  {
+    "question": "What does CSS stand for?",
+    "options": ["Cascading Style Sheets", "Creative Style System", "Compact Style Syntax", "Coupled Style Sheets"],
+    "answer": "Cascading Style Sheets"
+  }
+]
