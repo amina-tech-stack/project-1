@@ -29,18 +29,6 @@ export default function CoursePage() {
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
-  // Set Modal app element after DOM is ready
-  useEffect(() => {
-    if (typeof window !== "undefined") {
-      const element = document.getElementById("__next");
-      if (element) {
-        Modal.setAppElement("#__next");
-      } else {
-        console.warn("Element #__next not found in DOM");
-      }
-    }
-  }, []);
-
   // Fetch progress on mount
   useEffect(() => {
     if (status === "authenticated" && slug) {
@@ -107,6 +95,7 @@ export default function CoursePage() {
       setIsLoading(false);
     }
   };
+
   // Toggle section expansion
   const toggleSection = (sectionIndex: number) => {
     setExpandedSections((prev) => ({
@@ -121,7 +110,7 @@ export default function CoursePage() {
     router.push(`/courses/${slug}/${encodeURIComponent(lectureTitle)}`);
   };
 
-  // Course data (unchanged)
+  // Course data
   const courses = [
     {
       slug: "front-end-development",
@@ -613,8 +602,8 @@ export default function CoursePage() {
   if (status === "loading") {
     return (
       <div className="min-h-screen bg-gray-900 flex items-center justify-center">
-        <div className="text-3xl text-green-400 animate-pulse font-mono tracking-wide">
-          Chargement...
+        <div className="text-2xl text-green-400 animate-pulse font-mono tracking-wide">
+          Loading...
         </div>
       </div>
     );
@@ -627,7 +616,7 @@ export default function CoursePage() {
   if (!course) {
     return (
       <div className="min-h-screen bg-gray-900 flex items-center justify-center">
-        <div className="text-3xl text-red-400 font-mono tracking-wide">
+        <div className="text-2xl text-red-400 font-mono tracking-wide">
           Course not found
         </div>
       </div>
@@ -635,83 +624,83 @@ export default function CoursePage() {
   }
 
   return (
-    <div className="bg-gray-900 text-white">
+    <div className="bg-gray-900 text-white min-h-screen">
       {/* Navbar */}
-      <nav className="bg-gray-800/95 backdrop-blur-lg border-b-2 border-green-500/40 sticky top-0 z-50 shadow-lg shadow-green-500/10">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-5 flex justify-between items-center">
+      <nav className="bg-gray-800/95 backdrop-blur-lg border-b border-green-500/50 sticky top-0 z-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
           <div className="flex items-center space-x-4">
-            <h1 className="text-3xl font-extrabold text-green-400 font-mono tracking-widest">
+            <h1 className="text-2xl font-bold text-green-400 font-mono">
               CyberLearn
             </h1>
           </div>
-          <div className="flex items-center space-x-6">
-            <span className="text-lg text-gray-200 font-mono tracking-wide">
-              Bonjour, {session.user.name}
+          <div className="flex items-center space-x-4">
+            <span className="text-sm text-gray-200 font-mono">
+              Hello, {session.user.name}
             </span>
             <button
               onClick={handleLogout}
-              className="py-2.5 px-6 bg-gradient-to-r from-red-700 to-red-900 text-white rounded-xl hover:from-red-800 hover:to-red-950 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2 focus:ring-offset-gray-900 transition-all duration-300 font-mono text-sm"
+              className="py-2 px-4 bg-red-600 text-white rounded-lg hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2 focus:ring-offset-gray-900 transition-all duration-200 font-mono text-sm"
             >
-              Déconnexion
+              Logout
             </button>
           </div>
         </div>
       </nav>
 
       {/* Hero Section */}
-      <section className="relative h-screen w-full flex items-center justify-center overflow-hidden">
+      <section className="relative min-h-[70vh] w-full flex items-center justify-center overflow-hidden">
         <canvas ref={canvasRef} className="absolute inset-0 z-0" />
-        <div className="relative z-10 text-center max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h1 className="text-5xl sm:text-7xl md:text-8xl font-extrabold text-green-400 font-mono mb-8 animate-[pulse_2s_ease-in-out_infinite] leading-tight drop-shadow-[0_0_20px_rgba(0,255,136,0.5)]">
+        <div className="relative z-10 text-center max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-green-400 font-mono mb-6 leading-tight">
             {course.title}
           </h1>
-          <p className="text-xl sm:text-2xl md:text-3xl text-gray-200 max-w-4xl mx-auto mb-10 font-mono leading-relaxed tracking-wide">
+          <p className="text-base sm:text-lg text-gray-200 max-w-3xl mx-auto mb-8 font-mono">
             {course.description}
           </p>
           <div className="mb-6">
-            <div className="w-full bg-gray-800 rounded-full h-4">
+            <div className="w-full bg-gray-700 rounded-full h-2.5">
               <div
-                className="bg-gradient-to-r from-green-500 to-cyan-500 h-4 rounded-full transition-all duration-500"
+                className="bg-green-500 h-2.5 rounded-full transition-all duration-500"
                 style={{ width: `${progress.completionPercentage}%` }}
               ></div>
             </div>
-            <p className="text-gray-200 font-mono text-sm mt-2">
+            <p className="text-gray-300 font-mono text-sm mt-2">
               Progress: {Math.round(progress.completionPercentage)}% Complete
             </p>
           </div>
           <Link
             href="/dashboard"
-            className="py-4 px-10 bg-gradient-to-r from-green-500 to-cyan-500 text-white rounded-xl hover:from-green-600 hover:to-cyan-600 focus:outline-none focus:ring-4 focus:ring-green-400 focus:ring-offset-2 focus:ring-offset-gray-900 transition-all duration-500 font-mono text-lg shadow-lg shadow-green-500/30"
+            className="inline-block py-3 px-6 bg-green-500 text-white rounded-lg hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-green-400 focus:ring-offset-2 focus:ring-offset-gray-900 transition-all duration-200 font-mono text-sm"
           >
             Back to Dashboard
           </Link>
         </div>
-        <div className="absolute inset-0 bg-gradient-to-b from-gray-900/80 to-gray-800/20 opacity-50 z-0"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-gray-900/70 to-gray-900/20 z-0"></div>
       </section>
 
       {/* Course Overview Section */}
-      <section className="py-16 bg-gray-900">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-4xl font-extrabold text-green-400 mb-8 font-mono tracking-widest drop-shadow-[0_0_10px_rgba(0,255,136,0.3)]">
+      <section className="py-12 bg-gray-900">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-3xl font-bold text-green-400 mb-6 font-mono">
             Course Overview
           </h2>
-          <p className="text-lg text-gray-200 font-mono leading-relaxed">
+          <p className="text-base text-gray-200 font-mono leading-relaxed">
             {course.overview}
           </p>
         </div>
       </section>
 
       {/* What You'll Learn Section */}
-      <section className="py-16 bg-gray-900">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-4xl font-extrabold text-green-400 mb-8 font-mono tracking-widest drop-shadow-[0_0_10px_rgba(0,255,136,0.3)]">
+      <section className="py-12 bg-gray-900">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-3xl font-bold text-green-400 mb-6 font-mono">
             What You'll Learn
           </h2>
           <ul className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             {course.learningObjectives.map((objective, index) => (
               <li
                 key={index}
-                className="flex items-start text-gray-200 font-mono text-base"
+                className="flex items-start text-gray-200 font-mono text-sm"
               >
                 <span className="text-green-400 mr-2">✔</span>
                 {objective}
@@ -722,74 +711,73 @@ export default function CoursePage() {
       </section>
 
       {/* Course Content Section */}
-      <section className="py-16 bg-gray-900">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-4xl font-extrabold text-green-400 mb-8 font-mono tracking-widest drop-shadow-[0_0_10px_rgba(0,255,136,0.3)]">
+      <section className="py-12 bg-gray-900">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-3xl font-bold text-green-400 mb-6 font-mono">
             Course Content
           </h2>
-          <div className="space-y-6">
+          <div className="space-y-4">
             {course.curriculum.map((section, sectionIndex) => (
               <div
                 key={sectionIndex}
-                className="relative bg-gray-800/90 rounded-2xl p-6 border-2 border-green-500/60 shadow-2xl shadow-green-500/30 hover:shadow-green-500/50 transition-all duration-500"
+                className="bg-gray-800 rounded-lg p-5 border border-green-500/30"
               >
-                <div className="absolute inset-0 bg-gradient-to-br from-green-500/20 to-cyan-500/20 opacity-40 hover:opacity-60 transition-opacity duration-500"></div>
-                <div className="relative z-10">
-                  <button
-                    className="w-full text-left text-2xl font-bold text-white mb-4 font-mono tracking-tight flex justify-between items-center"
-                    onClick={() => toggleSection(sectionIndex)}
-                  >
-                    <span>{section.section}</span>
-                    <span>{expandedSections[sectionIndex] ? "−" : "+"}</span>
-                  </button>
-                  <p className="text-gray-200 font-mono text-base mb-4">
-                    Duration: {section.duration}
-                  </p>
-                  {expandedSections[sectionIndex] && (
-                    <ul className="space-y-4">
-                      {section.lectures.map((lecture, lectureIndex) => (
-                        <li
-                          key={lectureIndex}
-                          className="flex justify-between items-center text-gray-200 font-mono text-sm"
-                        >
-                          <div className="flex items-center space-x-2">
-                            <input
-                              type="checkbox"
-                              checked={progress.completedLectures.includes(
-                                lecture.title
-                              )}
-                              onChange={() =>
-                                handleCompleteLecture(
-                                  lecture.title,
-                                  totalLectures
-                                )
-                              }
-                              className="mr-2 h-4 w-4 text-green-500 focus:ring-green-400 border-gray-600 rounded"
-                              disabled={progress.completedLectures.includes(
-                                lecture.title
-                              )}
-                            />
-                            <button
-                              onClick={() => navigateToLecture(lecture.title)}
-                              className="py-1 px-3 bg-gradient-to-r from-green-600 to-cyan-600 text-white rounded-md hover:from-green-700 hover:to-cyan-700 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 focus:ring-offset-gray-800 transition-all duration-300 font-mono text-xs"
-                            >
-                              View
-                            </button>
-                            <button
-                              onClick={() => handleAIExplain(lecture.title)}
-                              className="py-1 px-3 bg-gradient-to-r from-blue-500 to-blue-700 text-white rounded-md hover:from-blue-600 hover:to-blue-800 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-gray-800 transition-all duration-300 font-mono text-xs ml-2"
-                              disabled={isLoading}
-                            >
-                              {isLoading ? "Loading..." : "AI Explain"}
-                            </button>
-                            <span>{lecture.title}</span>
-                          </div>
-                          <span className="ml-4">{lecture.duration}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  )}
-                </div>
+                <button
+                  className="w-full text-left text-xl font-bold text-white mb-3 font-mono flex justify-between items-center"
+                  onClick={() => toggleSection(sectionIndex)}
+                >
+                  <span>{section.section}</span>
+                  <span>{expandedSections[sectionIndex] ? "−" : "+"}</span>
+                </button>
+                <p className="text-gray-300 font-mono text-sm mb-3">
+                  Duration: {section.duration}
+                </p>
+                {expandedSections[sectionIndex] && (
+                  <ul className="space-y-3">
+                    {section.lectures.map((lecture, lectureIndex) => (
+                      <li
+                        key={lectureIndex}
+                        className="flex flex-col sm:flex-row sm:items-center sm:justify-between text-gray-200 font-mono text-sm"
+                      >
+                        <div className="flex items-center space-x-3">
+                          <input
+                            type="checkbox"
+                            checked={progress.completedLectures.includes(
+                              lecture.title
+                            )}
+                            onChange={() =>
+                              handleCompleteLecture(
+                                lecture.title,
+                                totalLectures
+                              )
+                            }
+                            className="h-4 w-4 text-green-500 focus:ring-green-400 border-gray-600 rounded"
+                            disabled={progress.completedLectures.includes(
+                              lecture.title
+                            )}
+                          />
+                          <button
+                            onClick={() => navigateToLecture(lecture.title)}
+                            className="py-1.5 px-3 bg-green-600 text-white rounded-md hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 focus:ring-offset-gray-800 transition-all duration-200 font-mono text-xs"
+                          >
+                            View
+                          </button>
+                          <button
+                            onClick={() => handleAIExplain(lecture.title)}
+                            className="py-1.5 px-3 bg-blue-600 text-white rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-gray-800 transition-all duration-200 font-mono text-xs"
+                            disabled={isLoading}
+                          >
+                            {isLoading ? "Loading..." : "AI Explain"}
+                          </button>
+                          <span className="truncate">{lecture.title}</span>
+                        </div>
+                        <span className="mt-2 sm:mt-0 sm:ml-4 text-gray-300">
+                          {lecture.duration}
+                        </span>
+                      </li>
+                    ))}
+                  </ul>
+                )}
               </div>
             ))}
           </div>
@@ -801,36 +789,41 @@ export default function CoursePage() {
         isOpen={isPopupOpen}
         onRequestClose={() => setIsPopupOpen(false)}
         contentLabel="AI Explanation"
-        className="relative bg-gray-800 rounded-lg p-6 max-w-lg mx-auto mt-20"
-        overlayClassName="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center"
+        className="relative bg-gray-800 rounded-lg p-6 max-w-lg mx-auto my-8 max-h-[70vh] overflow-y-auto outline-none"
+        overlayClassName="fixed inset-0 bg-black/60 flex items-center justify-center z-50"
+        appElement={
+          typeof window !== "undefined"
+            ? document.getElementById("__next") || document.body
+            : document.body
+        }
       >
-        <h2 className="text-2xl font-bold text-green-400 mb-4 font-mono">
+        <h2 className="text-xl font-bold text-green-400 mb-4 font-mono">
           AI Explanation
         </h2>
         {error ? (
-          <p className="text-red-400 font-mono">{error}</p>
+          <p className="text-red-400 font-mono text-sm">{error}</p>
         ) : (
-          <p className="text-gray-200 font-mono">{popupContent}</p>
+          <p className="text-gray-200 font-mono text-sm">{popupContent}</p>
         )}
         <button
           onClick={() => setIsPopupOpen(false)}
-          className="mt-4 px-4 py-2 bg-gradient-to-r from-red-600 to-red-800 text-white rounded-md hover:from-red-700 hover:to-red-900 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2 focus:ring-offset-gray-800 transition-all duration-300 font-mono"
+          className="mt-4 px-4 py-2 bg-red-600 text-white rounded-md hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2 focus:ring-offset-gray-800 transition-all duration-200 font-mono text-sm w-full sm:w-auto"
         >
           Close
         </button>
       </Modal>
 
       {/* Requirements Section */}
-      <section className="py-16 bg-gray-900">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-4xl font-extrabold text-green-400 mb-8 font-mono tracking-widest drop-shadow-[0_0_10px_rgba(0,255,136,0.3)]">
+      <section className="py-12 bg-gray-900">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-3xl font-bold text-green-400 mb-6 font-mono">
             Requirements
           </h2>
           <ul className="space-y-2">
             {course.requirements.map((requirement, index) => (
               <li
                 key={index}
-                className="flex items-start text-gray-200 font-mono text-base"
+                className="flex items-start text-gray-200 font-mono text-sm"
               >
                 <span className="text-green-400 mr-2">•</span>
                 {requirement}
@@ -841,35 +834,32 @@ export default function CoursePage() {
       </section>
 
       {/* Instructor Section */}
-      <section className="py-16 bg-gray-900">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-4xl font-extrabold text-green-400 mb-8 font-mono tracking-widest drop-shadow-[0_0_10px_rgba(0,255,136,0.3)]">
+      <section className="py-12 bg-gray-900">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-3xl font-bold text-green-400 mb-6 font-mono">
             Meet Your Instructor
           </h2>
-          <div className="relative bg-gray-800/90 rounded-2xl p-6 border-2 border-green-500/60 shadow-2xl shadow-green-500/30">
-            <div className="absolute inset-0 bg-gradient-to-br from-green-500/20 to-cyan-500/20 opacity-40"></div>
-            <div className="relative z-10">
-              <h3 className="text-2xl font-bold text-white mb-2 font-mono tracking-tight">
-                {course.instructor.name}
-              </h3>
-              <p className="text-gray-200 font-mono text-base">
-                {course.instructor.bio}
-              </p>
-            </div>
+          <div className="bg-gray-800 rounded-lg p-5 border border-green-500/30">
+            <h3 className="text-xl font-bold text-white mb-2 font-mono">
+              {course.instructor.name}
+            </h3>
+            <p className="text-gray-200 font-mono text-sm">
+              {course.instructor.bio}
+            </p>
           </div>
         </div>
       </section>
 
       {/* Footer Section */}
-      <footer className="bg-gray-800/95 py-12 border-t-2 border-green-500/40 shadow-lg shadow-green-500/10">
+      <footer className="bg-gray-800 py-8 border-t border-green-500/50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <p className="text-lg text-gray-200 font-mono mb-6 leading-relaxed">
+          <p className="text-sm text-gray-200 font-mono mb-4">
             Join a global community of tech pioneers. Our meticulously designed
             courses in Front-End, Back-End, AI, and Cybersecurity offer hands-on
             projects, expert mentorship, and the latest industry insights to
             propel you to the forefront of technology.
           </p>
-          <p className="text-sm text-gray-400 font-mono">
+          <p className="text-xs text-gray-400 font-mono">
             &copy; 2025 CyberLearn. All rights reserved.
           </p>
         </div>
