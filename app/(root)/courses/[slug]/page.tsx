@@ -6,6 +6,7 @@ import { useRouter, useParams } from "next/navigation";
 import { useSession, signOut } from "next-auth/react";
 import * as THREE from "three";
 import Link from "next/link";
+import Modal from "react-modal";
 
 export default function CoursePage() {
   const { data: session, status } = useSession();
@@ -23,6 +24,22 @@ export default function CoursePage() {
   const [expandedSections, setExpandedSections] = useState<{
     [key: number]: boolean;
   }>({});
+  const [isPopupOpen, setIsPopupOpen] = useState(false);
+  const [popupContent, setPopupContent] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState<string | null>(null);
+
+  // Set Modal app element after DOM is ready
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      const element = document.getElementById("__next");
+      if (element) {
+        Modal.setAppElement("#__next");
+      } else {
+        console.warn("Element #__next not found in DOM");
+      }
+    }
+  }, []);
 
   // Fetch progress on mount
   useEffect(() => {
@@ -56,6 +73,40 @@ export default function CoursePage() {
     }
   };
 
+  // Handle AI explanation
+  const handleAIExplain = async (lectureTitle: string) => {
+    setIsLoading(true);
+    setError(null);
+    try {
+      const response = await fetch("/api/explain-lecture", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ lectureTitle }),
+      });
+
+      if (!response.ok) {
+        const data = await response.json();
+        throw new Error(
+          data.error || `API request failed with status ${response.status}`
+        );
+      }
+
+      const data = await response.json();
+      if (data.explanation) {
+        setPopupContent(data.explanation);
+        setIsPopupOpen(true);
+      } else {
+        setError(data.error || "No explanation received");
+      }
+    } catch (error: any) {
+      console.error("Error fetching explanation:", error);
+      setError(error.message || "Failed to fetch explanation");
+    } finally {
+      setIsLoading(false);
+    }
+  };
   // Toggle section expansion
   const toggleSection = (sectionIndex: number) => {
     setExpandedSections((prev) => ({
@@ -66,11 +117,11 @@ export default function CoursePage() {
 
   // Navigate to course content page
   const navigateToLecture = (lectureTitle: string) => {
-    console.log("Navigating to:", { slug, lectureTitle }); // Debug navigation
+    console.log("Navigating to:", { slug, lectureTitle });
     router.push(`/courses/${slug}/${encodeURIComponent(lectureTitle)}`);
   };
 
-  // Course data
+  // Course data (unchanged)
   const courses = [
     {
       slug: "front-end-development",
@@ -724,6 +775,13 @@ export default function CoursePage() {
                             >
                               View
                             </button>
+                            <button
+                              onClick={() => handleAIExplain(lecture.title)}
+                              className="py-1 px-3 bg-gradient-to-r from-blue-500 to-blue-700 text-white rounded-md hover:from-blue-600 hover:to-blue-800 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-gray-800 transition-all duration-300 font-mono text-xs ml-2"
+                              disabled={isLoading}
+                            >
+                              {isLoading ? "Loading..." : "AI Explain"}
+                            </button>
                             <span>{lecture.title}</span>
                           </div>
                           <span className="ml-4">{lecture.duration}</span>
@@ -737,6 +795,30 @@ export default function CoursePage() {
           </div>
         </div>
       </section>
+
+      {/* Modal for AI Explanation */}
+      <Modal
+        isOpen={isPopupOpen}
+        onRequestClose={() => setIsPopupOpen(false)}
+        contentLabel="AI Explanation"
+        className="relative bg-gray-800 rounded-lg p-6 max-w-lg mx-auto mt-20"
+        overlayClassName="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center"
+      >
+        <h2 className="text-2xl font-bold text-green-400 mb-4 font-mono">
+          AI Explanation
+        </h2>
+        {error ? (
+          <p className="text-red-400 font-mono">{error}</p>
+        ) : (
+          <p className="text-gray-200 font-mono">{popupContent}</p>
+        )}
+        <button
+          onClick={() => setIsPopupOpen(false)}
+          className="mt-4 px-4 py-2 bg-gradient-to-r from-red-600 to-red-800 text-white rounded-md hover:from-red-700 hover:to-red-900 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2 focus:ring-offset-gray-800 transition-all duration-300 font-mono"
+        >
+          Close
+        </button>
+      </Modal>
 
       {/* Requirements Section */}
       <section className="py-16 bg-gray-900">
