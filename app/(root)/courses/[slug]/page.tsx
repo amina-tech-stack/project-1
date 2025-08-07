@@ -115,9 +115,8 @@ export default function CoursePage() {
     {
       slug: "front-end-development",
       title: "Front-End Development",
-      icon: "🌐",
       description:
-        "Craft immersive, responsive web interfaces with HTML, CSS, JavaScript, and React. Build dynamic applications that deliver seamless user experiences across all platforms.",
+        "Build responsive web interfaces with HTML, CSS, JavaScript, and React.",
       overview:
         "This comprehensive Front-End Development course takes you from beginner to pro, teaching you how to create stunning, responsive web applications using modern tools and frameworks. You'll master HTML, CSS, JavaScript, and React, and build real-world projects to solidify your skills.",
       learningObjectives: [
@@ -215,9 +214,7 @@ export default function CoursePage() {
     {
       slug: "back-end-development",
       title: "Back-End Development",
-      icon: "🗄️",
-      description:
-        "Master server-side development with Node.js, Express, and databases like MongoDB. Create scalable APIs and manage data to power next-generation applications.",
+      description: "Develop scalable APIs with Node.js, Express, and MongoDB.",
       overview:
         "Dive into the world of back-end development with this in-depth course. Learn to build robust server-side applications using Node.js, Express, and MongoDB. From RESTful APIs to authentication systems, you'll gain the skills to power modern web applications.",
       learningObjectives: [
@@ -291,9 +288,8 @@ export default function CoursePage() {
     {
       slug: "artificial-intelligence",
       title: "Artificial Intelligence",
-      icon: "🤖",
       description:
-        "Unlock the power of AI with machine learning, neural networks, and TensorFlow. Develop intelligent systems that adapt and solve complex real-world problems.",
+        "Create intelligent systems using machine learning and TensorFlow.",
       overview:
         "This course introduces you to the exciting field of artificial intelligence. Learn machine learning, neural networks, and TensorFlow to build intelligent systems that can analyze data, make predictions, and solve real-world problems.",
       learningObjectives: [
@@ -378,9 +374,7 @@ export default function CoursePage() {
     {
       slug: "cybersecurity",
       title: "Cybersecurity",
-      icon: "🔒",
-      description:
-        "Defend the digital frontier with skills in ethical hacking, penetration testing, and security protocols. Secure systems and data against evolving threats.",
+      description: "Learn ethical hacking and secure systems against threats.",
       overview:
         "Become a cybersecurity expert with this hands-on course. Learn ethical hacking, penetration testing, and security protocols to protect systems from cyber threats. Build practical skills through real-world scenarios and projects.",
       learningObjectives: [
@@ -456,6 +450,591 @@ export default function CoursePage() {
       instructor: {
         name: "Michael Lee",
         bio: "A cybersecurity expert with 15 years of experience in ethical hacking and penetration testing. Michael has worked with global organizations to secure their systems and loves teaching practical security skills.",
+      },
+    },
+    {
+      slug: "cloud-computing",
+      title: "Cloud Computing",
+      description: "Deploy scalable apps on AWS, Azure, or Google Cloud.",
+      overview:
+        "Master cloud computing with this comprehensive course. Learn to build, deploy, and manage scalable applications using AWS, Azure, and Google Cloud. Gain hands-on experience with real-world cloud projects.",
+      learningObjectives: [
+        "Understand cloud computing concepts and services.",
+        "Deploy applications on AWS, Azure, and Google Cloud.",
+        "Manage cloud infrastructure and resources.",
+        "Implement cloud security best practices.",
+        "Build a cloud-based project for your portfolio.",
+      ],
+      curriculum: [
+        {
+          section: "Introduction to Cloud Computing",
+          lectures: [
+            { title: "What is Cloud Computing?", duration: "15 min" },
+            { title: "Overview of Cloud Providers", duration: "20 min" },
+            { title: "Setting Up Cloud Accounts", duration: "25 min" },
+          ],
+          duration: "1 hour",
+        },
+        {
+          section: "AWS Fundamentals",
+          lectures: [
+            { title: "Introduction to AWS Services", duration: "40 min" },
+            { title: "EC2 and S3 Basics", duration: "50 min" },
+            { title: "Deploying a Simple Application", duration: "45 min" },
+            { title: "Project: AWS Static Website", duration: "1.5 hours" },
+          ],
+          duration: "3 weeks",
+        },
+        {
+          section: "Azure & Google Cloud",
+          lectures: [
+            { title: "Introduction to Azure", duration: "40 min" },
+            { title: "Google Cloud Platform Basics", duration: "50 min" },
+            { title: "Comparing Cloud Providers", duration: "45 min" },
+            { title: "Project: Multi-Cloud Deployment", duration: "2 hours" },
+          ],
+          duration: "3 weeks",
+        },
+        {
+          section: "Cloud Security & Management",
+          lectures: [
+            { title: "Securing Cloud Resources", duration: "40 min" },
+            { title: "Monitoring and Scaling", duration: "50 min" },
+            { title: "Cost Optimization", duration: "45 min" },
+          ],
+          duration: "2 weeks",
+        },
+        {
+          section: "Capstone Project",
+          lectures: [
+            { title: "Planning Your Cloud Application", duration: "30 min" },
+            { title: "Building and Deploying", duration: "3 hours" },
+            { title: "Project Review and Optimization", duration: "1 hour" },
+          ],
+          duration: "3 weeks",
+        },
+      ],
+      requirements: [
+        "Basic understanding of web development",
+        "A computer with internet access",
+        "Free-tier accounts for AWS, Azure, or Google Cloud",
+      ],
+      instructor: {
+        name: "Sarah Johnson",
+        bio: "A cloud architect with 10 years of experience deploying scalable applications on AWS, Azure, and Google Cloud. Sarah is passionate about teaching cloud technologies to aspiring engineers.",
+      },
+    },
+    {
+      slug: "data-science",
+      title: "Data Science",
+      description: "Analyze data with Python, Pandas, and machine learning.",
+      overview:
+        "Unlock the power of data science with this hands-on course. Learn to analyze and visualize data using Python, Pandas, and Jupyter, and apply machine learning techniques to derive actionable insights.",
+      learningObjectives: [
+        "Master data analysis with Python and Pandas.",
+        "Create visualizations using Matplotlib and Seaborn.",
+        "Apply machine learning algorithms to datasets.",
+        "Interpret and communicate data insights.",
+        "Build a data science portfolio project.",
+      ],
+      curriculum: [
+        {
+          section: "Introduction to Data Science",
+          lectures: [
+            { title: "What is Data Science?", duration: "15 min" },
+            { title: "Setting Up Python and Jupyter", duration: "20 min" },
+            { title: "Data Science Workflow", duration: "15 min" },
+          ],
+          duration: "1 hour",
+        },
+        {
+          section: "Data Analysis with Python",
+          lectures: [
+            { title: "Introduction to Pandas", duration: "40 min" },
+            { title: "Data Cleaning and Preparation", duration: "50 min" },
+            { title: "Exploratory Data Analysis", duration: "45 min" },
+            { title: "Project: Data Analysis Report", duration: "1.5 hours" },
+          ],
+          duration: "3 weeks",
+        },
+        {
+          section: "Data Visualization",
+          lectures: [
+            { title: "Matplotlib and Seaborn Basics", duration: "40 min" },
+            {
+              title: "Creating Interactive Visualizations",
+              duration: "50 min",
+            },
+            { title: "Storytelling with Data", duration: "45 min" },
+            { title: "Project: Visualization Dashboard", duration: "2 hours" },
+          ],
+          duration: "3 weeks",
+        },
+        {
+          section: "Machine Learning for Data Science",
+          lectures: [
+            { title: "Introduction to Scikit-Learn", duration: "40 min" },
+            { title: "Supervised Learning Models", duration: "50 min" },
+            { title: "Model Evaluation and Tuning", duration: "45 min" },
+          ],
+          duration: "2 weeks",
+        },
+        {
+          section: "Capstone Project",
+          lectures: [
+            { title: "Planning Your Data Science Project", duration: "30 min" },
+            { title: "Building and Analyzing", duration: "3 hours" },
+            { title: "Project Presentation", duration: "1 hour" },
+          ],
+          duration: "3 weeks",
+        },
+      ],
+      requirements: [
+        "Basic Python programming knowledge",
+        "Python and Jupyter installed",
+        "Familiarity with basic statistics",
+      ],
+      instructor: {
+        name: "Dr. Laura Patel",
+        bio: "A data scientist with 9 years of experience in analytics and machine learning. Laura has worked with global firms to derive insights from data and is passionate about teaching data science.",
+      },
+    },
+    {
+      slug: "mobile-app-development",
+      title: "Mobile App Development",
+      description: "Create mobile apps with React Native and Flutter.",
+      overview:
+        "Learn to build cross-platform mobile applications with React Native and Flutter. This course covers app development for iOS and Android, focusing on creating intuitive, high-performance mobile experiences.",
+      learningObjectives: [
+        "Develop cross-platform apps with React Native.",
+        "Build mobile UIs with Flutter and Dart.",
+        "Integrate APIs and manage app state.",
+        "Test and deploy mobile applications.",
+        "Create a mobile app portfolio project.",
+      ],
+      curriculum: [
+        {
+          section: "Introduction to Mobile App Development",
+          lectures: [
+            { title: "What is Mobile App Development?", duration: "15 min" },
+            { title: "Setting Up React Native", duration: "20 min" },
+            { title: "Setting Up Flutter", duration: "20 min" },
+          ],
+          duration: "1 hour",
+        },
+        {
+          section: "React Native Basics",
+          lectures: [
+            { title: "React Native Components", duration: "40 min" },
+            { title: "Navigation and State Management", duration: "50 min" },
+            { title: "Building a Simple App", duration: "45 min" },
+            { title: "Project: Task Manager App", duration: "1.5 hours" },
+          ],
+          duration: "3 weeks",
+        },
+        {
+          section: "Flutter Fundamentals",
+          lectures: [
+            { title: "Introduction to Dart", duration: "40 min" },
+            { title: "Flutter Widgets and Layouts", duration: "50 min" },
+            { title: "State Management in Flutter", duration: "45 min" },
+            { title: "Project: Weather App", duration: "2 hours" },
+          ],
+          duration: "3 weeks",
+        },
+        {
+          section: "Advanced Mobile Development",
+          lectures: [
+            { title: "Integrating APIs in Apps", duration: "40 min" },
+            { title: "Testing Mobile Apps", duration: "50 min" },
+            { title: "Deploying to App Stores", duration: "45 min" },
+          ],
+          duration: "2 weeks",
+        },
+        {
+          section: "Capstone Project",
+          lectures: [
+            { title: "Planning Your Mobile App", duration: "30 min" },
+            { title: "Building and Testing", duration: "3 hours" },
+            { title: "Project Review and Deployment", duration: "1 hour" },
+          ],
+          duration: "3 weeks",
+        },
+      ],
+      requirements: [
+        "Basic JavaScript knowledge (for React Native)",
+        "A computer with React Native and Flutter installed",
+        "Android Studio or Xcode (optional for emulation)",
+      ],
+      instructor: {
+        name: "Chris Wong",
+        bio: "A mobile app developer with 7 years of experience building apps for iOS and Android. Chris specializes in React Native and Flutter and enjoys mentoring new developers.",
+      },
+    },
+    {
+      slug: "devops-engineering",
+      title: "DevOps Engineering",
+      description: "Automate software delivery with Docker and Kubernetes.",
+      overview:
+        "Master DevOps practices to streamline software delivery. Learn to automate development pipelines using CI/CD, Docker, and Kubernetes, and build scalable, reliable systems.",
+      learningObjectives: [
+        "Understand DevOps principles and practices.",
+        "Set up CI/CD pipelines for automated deployments.",
+        "Containerize applications with Docker.",
+        "Orchestrate containers with Kubernetes.",
+        "Build a DevOps portfolio project.",
+      ],
+      curriculum: [
+        {
+          section: "Introduction to DevOps",
+          lectures: [
+            { title: "What is DevOps?", duration: "15 min" },
+            { title: "Setting Up Your DevOps Environment", duration: "20 min" },
+            { title: "Overview of CI/CD", duration: "15 min" },
+          ],
+          duration: "1 hour",
+        },
+        {
+          section: "CI/CD Pipelines",
+          lectures: [
+            { title: "Introduction to CI/CD", duration: "40 min" },
+            { title: "Setting Up GitHub Actions", duration: "50 min" },
+            { title: "Automating Builds and Tests", duration: "45 min" },
+            { title: "Project: CI/CD Pipeline", duration: "1.5 hours" },
+          ],
+          duration: "3 weeks",
+        },
+        {
+          section: "Docker Fundamentals",
+          lectures: [
+            { title: "Introduction to Docker", duration: "40 min" },
+            { title: "Building Docker Images", duration: "50 min" },
+            {
+              title: "Docker Compose for Multi-Container Apps",
+              duration: "45 min",
+            },
+            { title: "Project: Dockerized Application", duration: "2 hours" },
+          ],
+          duration: "3 weeks",
+        },
+        {
+          section: "Kubernetes Basics",
+          lectures: [
+            { title: "Introduction to Kubernetes", duration: "40 min" },
+            { title: "Deploying Apps with Kubernetes", duration: "50 min" },
+            { title: "Scaling and Managing Clusters", duration: "45 min" },
+          ],
+          duration: "2 weeks",
+        },
+        {
+          section: "Capstone Project",
+          lectures: [
+            { title: "Planning Your DevOps Project", duration: "30 min" },
+            { title: "Building and Deploying", duration: "3 hours" },
+            { title: "Project Review and Optimization", duration: "1 hour" },
+          ],
+          duration: "3 weeks",
+        },
+      ],
+      requirements: [
+        "Basic understanding of Linux commands",
+        "A computer with Docker and Kubernetes installed",
+        "Familiarity with Git",
+      ],
+      instructor: {
+        name: "Alex Carter",
+        bio: "A DevOps engineer with 10 years of experience automating software delivery for tech companies. Alex is an expert in Docker and Kubernetes and loves teaching modern DevOps practices.",
+      },
+    },
+    {
+      slug: "blockchain-technology",
+      title: "Blockchain Technology",
+      description: "Build smart contracts with Ethereum and Solidity.",
+      overview:
+        "Explore the world of blockchain technology with this practical course. Learn to build decentralized applications and smart contracts using Ethereum and Solidity, focusing on secure, transparent solutions.",
+      learningObjectives: [
+        "Understand blockchain concepts and decentralization.",
+        "Write smart contracts with Solidity.",
+        "Develop decentralized applications (DApps).",
+        "Deploy blockchain solutions on Ethereum.",
+        "Create a blockchain portfolio project.",
+      ],
+      curriculum: [
+        {
+          section: "Introduction to Blockchain",
+          lectures: [
+            { title: "What is Blockchain?", duration: "15 min" },
+            { title: "Setting Up Ethereum Tools", duration: "20 min" },
+            { title: "Blockchain Use Cases", duration: "15 min" },
+          ],
+          duration: "1 hour",
+        },
+        {
+          section: "Solidity Basics",
+          lectures: [
+            { title: "Introduction to Solidity", duration: "40 min" },
+            { title: "Smart Contract Fundamentals", duration: "50 min" },
+            { title: "Testing Smart Contracts", duration: "45 min" },
+            { title: "Project: Simple Smart Contract", duration: "1.5 hours" },
+          ],
+          duration: "3 weeks",
+        },
+        {
+          section: "Building DApps",
+          lectures: [
+            { title: "What are DApps?", duration: "40 min" },
+            {
+              title: "Integrating Front-End with Blockchain",
+              duration: "50 min",
+            },
+            { title: "Deploying DApps on Ethereum", duration: "45 min" },
+            { title: "Project: Decentralized Voting App", duration: "2 hours" },
+          ],
+          duration: "3 weeks",
+        },
+        {
+          section: "Blockchain Security",
+          lectures: [
+            { title: "Securing Smart Contracts", duration: "40 min" },
+            { title: "Auditing Blockchain Applications", duration: "50 min" },
+            { title: "Common Vulnerabilities", duration: "45 min" },
+          ],
+          duration: "2 weeks",
+        },
+        {
+          section: "Capstone Project",
+          lectures: [
+            { title: "Planning Your Blockchain Project", duration: "30 min" },
+            { title: "Building and Deploying", duration: "3 hours" },
+            { title: "Project Review and Audit", duration: "1 hour" },
+          ],
+          duration: "3 weeks",
+        },
+      ],
+      requirements: [
+        "Basic JavaScript knowledge",
+        "A computer with Ethereum tools installed",
+        "Familiarity with web development",
+      ],
+      instructor: {
+        name: "Dr. Priya Sharma",
+        bio: "A blockchain developer with 8 years of experience building decentralized applications on Ethereum. Priya is passionate about blockchain innovation and teaching its applications.",
+      },
+    },
+    {
+      slug: "ui-ux-design",
+      title: "UI/UX Design",
+      description: "Design user-friendly interfaces with Figma and Adobe XD.",
+      overview:
+        "Master the art of UI/UX design with this hands-on course. Learn to create user-friendly interfaces using Figma and Adobe XD, focusing on user research, prototyping, and usability testing.",
+      learningObjectives: [
+        "Conduct user research and create personas.",
+        "Design wireframes and prototypes with Figma.",
+        "Create visually appealing UI designs.",
+        "Perform usability testing and iterate designs.",
+        "Build a UI/UX portfolio project.",
+      ],
+      curriculum: [
+        {
+          section: "Introduction to UI/UX Design",
+          lectures: [
+            { title: "What is UI/UX Design?", duration: "15 min" },
+            { title: "Setting Up Figma and Adobe XD", duration: "20 min" },
+            { title: "Design Thinking Principles", duration: "15 min" },
+          ],
+          duration: "1 hour",
+        },
+        {
+          section: "User Research & Personas",
+          lectures: [
+            { title: "Conducting User Interviews", duration: "40 min" },
+            { title: "Creating User Personas", duration: "50 min" },
+            { title: "Defining User Journeys", duration: "45 min" },
+            { title: "Project: User Research Report", duration: "1.5 hours" },
+          ],
+          duration: "3 weeks",
+        },
+        {
+          section: "Wireframing & Prototyping",
+          lectures: [
+            { title: "Wireframing Basics", duration: "40 min" },
+            { title: "Prototyping in Figma", duration: "50 min" },
+            { title: "Interactive Prototypes", duration: "45 min" },
+            { title: "Project: Mobile App Prototype", duration: "2 hours" },
+          ],
+          duration: "3 weeks",
+        },
+        {
+          section: "UI Design & Usability Testing",
+          lectures: [
+            { title: "Designing UI Components", duration: "40 min" },
+            { title: "Usability Testing Methods", duration: "50 min" },
+            { title: "Iterating Based on Feedback", duration: "45 min" },
+          ],
+          duration: "2 weeks",
+        },
+        {
+          section: "Capstone Project",
+          lectures: [
+            { title: "Planning Your UI/UX Project", duration: "30 min" },
+            { title: "Designing and Testing", duration: "3 hours" },
+            { title: "Project Presentation", duration: "1 hour" },
+          ],
+          duration: "3 weeks",
+        },
+      ],
+      requirements: [
+        "Basic computer literacy",
+        "Figma or Adobe XD installed",
+        "No prior design experience required",
+      ],
+      instructor: {
+        name: "Emma Davis",
+        bio: "A UI/UX designer with 6 years of experience creating user-friendly interfaces for tech startups. Emma is passionate about teaching design principles and user-centered design.",
+      },
+    },
+    {
+      slug: "game-development",
+      title: "Game Development",
+      description: "Create games with Unity and Unreal Engine.",
+      overview:
+        "Learn to build immersive games with Unity and Unreal Engine. This course covers 3D modeling, physics, and scripting to create engaging gaming experiences for various platforms.",
+      learningObjectives: [
+        "Understand game development fundamentals.",
+        "Build 2D and 3D games with Unity.",
+        "Create games using Unreal Engine.",
+        "Implement game physics and mechanics.",
+        "Develop a game portfolio project.",
+      ],
+      curriculum: [
+        {
+          section: "Introduction to Game Development",
+          lectures: [
+            { title: "What is Game Development?", duration: "15 min" },
+            { title: "Setting Up Unity", duration: "20 min" },
+            { title: "Setting Up Unreal Engine", duration: "20 min" },
+          ],
+          duration: "1 hour",
+        },
+        {
+          section: "Unity Basics",
+          lectures: [
+            { title: "Unity Interface and Workflow", duration: "40 min" },
+            { title: "2D Game Development", duration: "50 min" },
+            { title: "Scripting with C#", duration: "45 min" },
+            { title: "Project: 2D Platformer Game", duration: "1.5 hours" },
+          ],
+          duration: "3 weeks",
+        },
+        {
+          section: "Unreal Engine Fundamentals",
+          lectures: [
+            { title: "Unreal Engine Interface", duration: "40 min" },
+            { title: "Blueprints Visual Scripting", duration: "50 min" },
+            { title: "3D Game Development", duration: "45 min" },
+            { title: "Project: 3D Shooter Game", duration: "2 hours" },
+          ],
+          duration: "3 weeks",
+        },
+        {
+          section: "Game Physics & Mechanics",
+          lectures: [
+            { title: "Implementing Game Physics", duration: "40 min" },
+            { title: "Creating Game Mechanics", duration: "50 min" },
+            { title: "Testing and Optimization", duration: "45 min" },
+          ],
+          duration: "2 weeks",
+        },
+        {
+          section: "Capstone Project",
+          lectures: [
+            { title: "Planning Your Game Project", duration: "30 min" },
+            { title: "Building and Testing", duration: "3 hours" },
+            { title: "Project Review and Publishing", duration: "1 hour" },
+          ],
+          duration: "3 weeks",
+        },
+      ],
+      requirements: [
+        "Basic programming knowledge (C# or C++ recommended)",
+        "Unity and Unreal Engine installed",
+        "A computer with a GPU for 3D rendering",
+      ],
+      instructor: {
+        name: "James Wilson",
+        bio: "A game developer with 10 years of experience building games with Unity and Unreal Engine. James has worked on indie and AAA titles and loves teaching game development.",
+      },
+    },
+    {
+      slug: "internet-of-things",
+      title: "Internet of Things",
+      description: "Develop IoT solutions with Arduino and Raspberry Pi.",
+      overview:
+        "Explore the Internet of Things with this practical course. Learn to build connected devices and smart systems using Arduino and Raspberry Pi, focusing on real-world IoT applications.",
+      learningObjectives: [
+        "Understand IoT concepts and architectures.",
+        "Program Arduino for sensor-based projects.",
+        "Build IoT systems with Raspberry Pi.",
+        "Integrate IoT devices with cloud platforms.",
+        "Create an IoT portfolio project.",
+      ],
+      curriculum: [
+        {
+          section: "Introduction to IoT",
+          lectures: [
+            { title: "What is IoT?", duration: "15 min" },
+            { title: "Setting Up Arduino", duration: "20 min" },
+            { title: "Setting Up Raspberry Pi", duration: "20 min" },
+          ],
+          duration: "1 hour",
+        },
+        {
+          section: "Arduino Programming",
+          lectures: [
+            { title: "Arduino Basics", duration: "40 min" },
+            { title: "Sensors and Actuators", duration: "50 min" },
+            { title: "Building IoT Prototypes", duration: "45 min" },
+            { title: "Project: Smart Sensor System", duration: "1.5 hours" },
+          ],
+          duration: "3 weeks",
+        },
+        {
+          section: "Raspberry Pi IoT",
+          lectures: [
+            { title: "Raspberry Pi Setup and Python", duration: "40 min" },
+            { title: "Connecting IoT Devices", duration: "50 min" },
+            { title: "IoT Data Visualization", duration: "45 min" },
+            { title: "Project: Smart Home System", duration: "2 hours" },
+          ],
+          duration: "3 weeks",
+        },
+        {
+          section: "Cloud Integration",
+          lectures: [
+            { title: "Connecting IoT to the Cloud", duration: "40 min" },
+            { title: "Data Storage and Analysis", duration: "50 min" },
+            { title: "IoT Security", duration: "45 min" },
+          ],
+          duration: "2 weeks",
+        },
+        {
+          section: "Capstone Project",
+          lectures: [
+            { title: "Planning Your IoT Project", duration: "30 min" },
+            { title: "Building and Testing", duration: "3 hours" },
+            { title: "Project Review and Deployment", duration: "1 hour" },
+          ],
+          duration: "3 weeks",
+        },
+      ],
+      requirements: [
+        "Basic programming knowledge (Python or C recommended)",
+        "Arduino and Raspberry Pi hardware",
+        "Basic electronics knowledge (optional)",
+      ],
+      instructor: {
+        name: "Dr. Maria Gonzalez",
+        bio: "An IoT expert with 8 years of experience developing smart systems with Arduino and Raspberry Pi. Maria is passionate about teaching IoT and its real-world applications.",
       },
     },
   ];
@@ -855,9 +1434,11 @@ export default function CoursePage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <p className="text-sm text-gray-200 font-mono mb-4">
             Join a global community of tech pioneers. Our meticulously designed
-            courses in Front-End, Back-End, AI, and Cybersecurity offer hands-on
-            projects, expert mentorship, and the latest industry insights to
-            propel you to the forefront of technology.
+            courses in Front-End, Back-End, AI, Cybersecurity, Cloud Computing,
+            Data Science, Mobile Apps, DevOps, Blockchain, UI/UX, Game
+            Development, and IoT offer hands-on projects, expert mentorship, and
+            the latest industry insights to propel you to the forefront of
+            technology.
           </p>
           <p className="text-xs text-gray-400 font-mono">
             &copy; 2025 CyberLearn. All rights reserved.

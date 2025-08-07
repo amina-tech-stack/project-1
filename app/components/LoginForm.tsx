@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, FormEvent } from "react";
+import React, { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
 import Image from "next/image";
@@ -12,7 +12,7 @@ interface FormData {
   password: string;
 }
 
-export default function LoginForm() {
+const LoginForm: React.FC = () => {
   const [formData, setFormData] = useState<FormData>({
     email: "",
     password: "",
@@ -24,25 +24,21 @@ export default function LoginForm() {
   const router = useRouter();
   const { data: session, status } = useSession();
 
-  // Redirect to dashboard if authenticated
   useEffect(() => {
     if (status === "authenticated") {
       router.push("/dashboard");
     }
   }, [status, router]);
 
-  // Handle form input changes
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  // Toggle password visibility
   const togglePasswordVisibility = () => {
     setShowPassword(!showPassword);
   };
 
-  // Handle form submission for credentials login
-  const handleSubmit = async (e: FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setMessage("");
     setError("");
@@ -59,184 +55,173 @@ export default function LoginForm() {
         throw new Error(res.error);
       }
 
-      setMessage("Connexion réussie !");
+      setMessage("Login successful!");
       setFormData({ email: "", password: "" });
       router.push("/dashboard");
     } catch (err) {
       setError(
-        err instanceof Error ? err.message : "Une erreur inconnue est survenue"
+        err instanceof Error ? err.message : "An unknown error occurred"
       );
     } finally {
       setIsLoading(false);
     }
   };
 
-  // Handle provider-based login (Google, GitHub)
   const handleProviderLogin = async (provider: "google" | "github") => {
     setIsLoading(true);
     try {
       await signIn(provider, { callbackUrl: "/dashboard" });
     } catch (err) {
-      setError("Erreur lors de la connexion avec " + provider);
+      setError(`Error logging in with ${provider}`);
       setIsLoading(false);
     }
   };
 
-  // Handle logout
   const handleLogout = async () => {
     setIsLoading(true);
     try {
       await signOut({ redirect: false });
-      setMessage("Déconnexion réussie !");
+      setMessage("Logout successful!");
       router.push("/login");
     } catch (err) {
-      setError("Erreur lors de la déconnexion");
+      setError("Error logging out");
     } finally {
       setIsLoading(false);
     }
   };
 
-  // If user is authenticated, show loading state until redirect
   if (status === "authenticated") {
     return (
-      <div className="min-h-screen flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8 animate-gradient-bg">
-        <div className="max-w-md w-full bg-white rounded-2xl shadow-2xl p-8 transform transition-all duration-500 hover:scale-105">
-          <p className="text-center text-gray-600">
-            Redirection vers le tableau de bord...
-          </p>
-        </div>
+      <div className="text-center text-gray-200 font-mono tracking-wide text-base">
+        Redirecting to dashboard...
       </div>
     );
   }
 
-  // Render login form if not authenticated
   return (
-    <div className="min-h-screen flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8 animate-gradient-bg">
-      <div className="max-w-md w-full bg-white rounded-2xl shadow-2xl p-8 transform transition-all duration-500 hover:scale-105">
-        <div className="flex justify-center mb-6">
-          <Link href="/">
-            <Image
-              src="/logo.png"
-              alt="NexTech Innovations logo"
-              width={160}
-              height={40}
-              className="hover:opacity-90 transition-opacity duration-300"
-            />
-          </Link>
+    <div className="space-y-4">
+      <div className="flex justify-center mb-4">
+        <Link href="/">
+          <Image
+            src="/logo.png"
+            alt="NexTech Innovations logo"
+            width={120}
+            height={30}
+            className="hover:opacity-90 transition-opacity duration-300"
+          />
+        </Link>
+      </div>
+      <form onSubmit={handleSubmit} className="space-y-3">
+        <div className="space-y-1">
+          <label
+            htmlFor="email"
+            className="block text-sm font-medium text-gray-200 font-mono"
+          >
+            Email
+          </label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            value={formData.email}
+            onChange={handleChange}
+            required
+            className="w-full p-3 border border-green-500/60 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-400 focus:border-green-400 transition-all duration-300 bg-gray-900/60 hover:bg-gray-900 text-gray-200 font-mono text-base"
+            placeholder="example@domain.com"
+          />
         </div>
-        <h2 className="text-3xl font-extrabold text-center text-gray-800 mb-6 animate-fade-in-down">
-          Connexion à NexTech
-        </h2>
-        <form onSubmit={handleSubmit} className="space-y-6">
-          <div className="space-y-2">
-            <label
-              htmlFor="email"
-              className="block text-sm font-medium text-gray-700"
-            >
-              Adresse e-mail
-            </label>
+        <div className="space-y-1">
+          <label
+            htmlFor="password"
+            className="block text-sm font-medium text-gray-200 font-mono"
+          >
+            Password
+          </label>
+          <div className="relative">
             <input
-              type="email"
-              id="email"
-              name="email"
-              value={formData.email}
+              type={showPassword ? "text" : "password"}
+              id="password"
+              name="password"
+              value={formData.password}
               onChange={handleChange}
               required
-              className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all duration-300 bg-gray-50 hover:bg-white"
-              placeholder="exemple@domaine.com"
+              className="w-full p-3 border border-green-500/60 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-400 focus:border-green-400 transition-all duration-300 bg-gray-900/60 hover:bg-gray-900 text-gray-200 font-mono text-base"
+              placeholder="Enter your password"
             />
-          </div>
-          <div className="space-y-2">
-            <label
-              htmlFor="password"
-              className="block text-sm font-medium text-gray-700"
-            >
-              Mot de passe
-            </label>
-            <div className="relative">
-              <input
-                type={showPassword ? "text" : "password"}
-                id="password"
-                name="password"
-                value={formData.password}
-                onChange={handleChange}
-                required
-                className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all duration-300 bg-gray-50 hover:bg-white"
-                placeholder="Entrez votre mot de passe"
-              />
-              <button
-                type="button"
-                onClick={togglePasswordVisibility}
-                className="absolute inset-y-0 right-0 pr-3 flex items-center text-gray-500 hover:text-gray-700 transition-colors duration-200"
-              >
-                {showPassword ? (
-                  <EyeOff className="h-5 w-5" />
-                ) : (
-                  <Eye className="h-5 w-5" />
-                )}
-              </button>
-            </div>
-          </div>
-          {message && (
-            <p className="text-green-600 text-center text-sm font-medium animate-fade-in">
-              {message}
-            </p>
-          )}
-          {error && (
-            <p className="text-red-600 text-center text-sm font-medium animate-fade-in">
-              {error}
-            </p>
-          )}
-          <button
-            type="submit"
-            disabled={isLoading}
-            className="w-full py-3 px-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-lg hover:from-blue-700 hover:to-purple-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
-          >
-            {isLoading ? "Connexion en cours..." : "Se connecter"}
-          </button>
-        </form>
-        <div className="mt-6">
-          <div className="relative">
-            <div className="absolute inset-0 flex items-center">
-              <div className="w-full border-t border-gray-300"></div>
-            </div>
-            <div className="relative flex justify-center text-sm">
-              <span className="px-2 bg-white text-gray-500">
-                Ou continuer avec
-              </span>
-            </div>
-          </div>
-          <div className="mt-4 grid grid-cols-2 gap-4">
             <button
-              onClick={() => handleProviderLogin("google")}
-              disabled={isLoading}
-              className="flex items-center justify-center py-2 px-4 bg-white border border-gray-300 rounded-lg hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
+              type="button"
+              onClick={togglePasswordVisibility}
+              className="absolute inset-y-0 right-0 pr-3 flex items-center text-gray-400 hover:text-green-400 transition-colors duration-200"
             >
-              <Chrome className="h-5 w-5 mr-2 text-gray-700" />
-              Google
-            </button>
-            <button
-              onClick={() => handleProviderLogin("github")}
-              disabled={isLoading}
-              className="flex items-center justify-center py-2 px-4 bg-white border border-gray-300 rounded-lg hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
-            >
-              <Github className="h-5 w-5 mr-2 text-gray-700" />
-              GitHub
+              {showPassword ? (
+                <EyeOff className="h-5 w-5" />
+              ) : (
+                <Eye className="h-5 w-5" />
+              )}
             </button>
           </div>
         </div>
-        <div className="mt-6 text-center">
-          <p className="text-sm text-gray-600">
-            Pas de compte ?{" "}
-            <Link
-              href="/signup"
-              className="text-blue-600 hover:text-blue-800 font-medium transition-colors duration-200"
-            >
-              S’inscrire
-            </Link>
+        {message && (
+          <p className="text-green-400 text-center text-sm font-medium font-mono">
+            {message}
           </p>
+        )}
+        {error && (
+          <p className="text-red-500 text-center text-sm font-medium font-mono">
+            {error}
+          </p>
+        )}
+        <button
+          type="submit"
+          disabled={isLoading}
+          className="w-full py-2 px-4 bg-gradient-to-r from-green-500 to-cyan-500 text-white rounded-lg hover:from-green-600 hover:to-cyan-600 focus:outline-none focus:ring-2 focus:ring-green-400 focus:ring-offset-2 focus:ring-offset-gray-900 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed font-mono text-base"
+        >
+          {isLoading ? "Logging in..." : "Login"}
+        </button>
+      </form>
+      <div className="mt-3">
+        <div className="relative">
+          <div className="absolute inset-0 flex items-center">
+            <div className="w-full border-t border-green-500/60" />
+          </div>
+          <div className="relative flex justify-center text-sm">
+            <span className="px-2 bg-gray-800/90 text-gray-200 font-mono">
+              Or continue with
+            </span>
+          </div>
         </div>
+        <div className="mt-3 grid grid-cols-2 gap-3">
+          <button
+            onClick={() => handleProviderLogin("google")}
+            disabled={isLoading}
+            className="flex items-center justify-center py-2 px-4 bg-gray-900/60 border border-green-500/60 rounded-lg hover:bg-gray-900 focus:outline-none focus:ring-2 focus:ring-green-400 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed text-gray-200 font-mono text-sm"
+          >
+            <Chrome className="h-5 w-5 mr-2 text-green-400" />
+            Google
+          </button>
+          <button
+            onClick={() => handleProviderLogin("github")}
+            disabled={isLoading}
+            className="flex items-center justify-center py-2 px-4 bg-gray-900/60 border border-green-500/60 rounded-lg hover:bg-gray-900 focus:outline-none focus:ring-2 focus:ring-green-400 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed text-gray-200 font-mono text-sm"
+          >
+            <Github className="h-5 w-5 mr-2 text-green-400" />
+            GitHub
+          </button>
+        </div>
+      </div>
+      <div className="mt-3 text-center">
+        <p className="text-sm text-gray-200 font-mono">
+          No account?{" "}
+          <Link
+            href="/signup"
+            className="text-green-400 hover:text-green-500 font-medium transition-colors duration-200"
+          >
+            Sign up
+          </Link>
+        </p>
       </div>
     </div>
   );
-}
+};
+
+export default LoginForm;
